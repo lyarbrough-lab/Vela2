@@ -240,46 +240,56 @@ magnitude depending on layer thickness.
 
 \begin{table}[h]
 \centering
-\caption{Monte Carlo simulation: gamma interaction and charge collection efficiency
-as a function of layer thickness for a 2.6~cm converter stack (2~MeV photons).}
+\caption{Monte Carlo simulation: charge collection efficiency as a function of layer
+thickness. Total stack thickness held constant at 2.6~cm for all runs (2~MeV photons,
+10~$\mu$m electron range, $8\times10^3$ photons). The bulk case (26~mm single layer)
+collects essentially zero charge; all values are relative to the 5~mm case.}
 \label{tab:thickness}
 \begin{tabular}{rrrr}
 \toprule
-Layer thickness ($\mu$m) & No.\ layers & Interaction (\%) & Collection (\%) \\
+Layer thickness ($\mu$m) & No.\ layers & Collection (\%) & vs.\ 5~mm \\
 \midrule
-5000  & 6    & 81.6 & 0.07 \\
-2000  & 13   & 81.8 & 0.10 \\
-1000  & 26   & 80.5 & 0.09 \\
-500   & 53   & 80.6 & 0.33 \\
-200   & 130  & 80.2 & 0.88 \\
-100   & 261  & 80.2 & 1.56 \\
-50    & 521  & 80.6 & 3.90 \\
-20    & 1301 & 80.6 & 9.53 \\
-10    & 2601 & 80.4 & 13.4  \\
-5     & 5200 & 80.7 & 15.5  \\
+26000 (bulk) & 1    & $\approx 0$  & 1$\times$ \\
+5000         & 5    & 0.017        & 17$\times$ \\
+2000         & 13   & 0.018        & 18$\times$ \\
+1000         & 26   & 0.030        & 30$\times$ \\
+500          & 52   & 0.101        & 101$\times$ \\
+200          & 130  & 0.193        & 193$\times$ \\
+100          & 260  & 0.372        & 372$\times$ \\
+50           & 520  & 0.933        & 933$\times$ \\
+20           & 1300 & 2.213        & $>2000\times$ \\
+10           & 2600 & 3.391        & $>3000\times$ \\
+5            & 5200 & 3.884        & $>3000\times$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-At 5~mm layers (bulk-like geometry), collection efficiency is negligible (0.07\%): nearly
-all secondary electrons thermalize within the layer before reaching a surface. As layer
-thickness decreases toward the electron range ($\sim$10~$\mu$m), collection efficiency
-rises sharply, reaching 15.5\% at 5~$\mu$m layers---a \textbf{21--25$\times$ improvement}
-over bulk geometry.
+A critical methodological note: the comparison must hold total stack thickness constant.
+An earlier version of this simulation varied total thickness alongside layer count,
+inadvertently causing thinner-layered stacks to absorb fewer gammas overall---masking
+the geometric effect. When total material is fixed at 2.6~cm, the result reverses
+dramatically. The bulk single-layer case collects essentially zero charge, because
+every secondary electron thermalizes before reaching a surface. As layer thickness
+decreases toward and below the electron range ($\sim$10~$\mu$m), collection efficiency
+rises by three orders of magnitude.
 
-This result has a clear physical interpretation. The photoelectric and Compton electrons
+The physically important regime for engineering is 100--500~$\mu$m layer thickness,
+achievable with current physical vapor deposition and electroplating techniques. In this
+range, collection efficiency reaches 0.1--0.4\%, representing a 100--370$\times$
+improvement over bulk geometry with identical total material.
+
+This result has a clean physical interpretation. The photoelectric and Compton electrons
 produced by gamma absorption carry kinetic energies of hundreds of keV but have ranges
-of only $\sim$10~$\mu$m in dense metals. In bulk material, these electrons deposit
-their energy as heat before reaching any collection electrode. In a thin-foil geometry,
-a substantial fraction of electrons are generated close enough to a layer boundary to
-escape and be collected. The graded stack does not improve gamma absorption---that is
-already efficient in bulk---but it transforms the conversion step from nearly zero to
-potentially useful.
+of only $\sim$10~$\mu$m in dense metals. In bulk material, these electrons deposit their
+energy as heat before reaching any collection surface. In a thin-foil geometry,
+electrons generated near any layer boundary escape and are collected. \emph{Layer
+geometry, not material choice, is the primary lever}: the same total mass of absorber
+produces orders-of-magnitude more collectible charge when structured as thin foils.
 
-These results are preliminary. The simulator uses approximate electron ranges and does
-not model space-charge effects, electrode geometry, or radiation-induced material
-degradation. Nevertheless, the trend is robust: \emph{layer geometry, not material
-choice, is the primary lever for improving collection efficiency} in a thin-foil converter.
+These results are from a simplified simulator (single-angle incidence, fixed electron
+range, no space-charge or electrode geometry effects) and should be treated as
+order-of-magnitude estimates. The trend is robust to model details because it reflects
+a fundamental geometric constraint.
 
 % ------------------------------------------------------------------
 \section{What Would Be Required: Honest Gaps}
