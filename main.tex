@@ -1,14 +1,286 @@
-\documentclass{article}
-\usepackage{graphicx} % Required for inserting images
+\documentclass[12pt]{article}
 
-\title{Vela}
-\author{Leslie Yarbrough}
-\date{April 2026}
+% ---- Packages ----
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{setspace}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{caption}
 
+\doublespacing
+
+% ---- Metadata ----
+\title{\textbf{Eating the Fire: Biomimetic Boundary Layers and the\\
+Case for Radiation Harvesting at Nuclear Interfaces}}
+
+\author{Leslie Yarbrough\\
+\small\textit{Correspondence: vela.yarbrough@gmail.com}}
+
+\date{April 2026\\[0.5em]
+\small Preprint — submitted to arXiv physics.gen-ph}
+
+% ---- Document ----
 \begin{document}
 
 \maketitle
 
-\section{Introduction}
+\begin{abstract}
+For eight decades, nuclear engineering has operated on a single safety paradigm:
+radiation must be blocked. Lead, concrete, water, distance---mass interposed between
+reaction and world. This paper proposes an alternative paradigm, drawn from three billion
+years of biological innovation: radiation can be \emph{eaten}. At hydrothermal vents,
+life thrives not by resisting extreme thermal and chemical gradients, but by metabolizing
+them. In radiotrophic fungi, melanin exhibits radiation-induced electronic and redox
+changes associated with enhanced growth and measurable electrochemical effects. These are
+not curiosities; they are biological demonstrations that high-energy gradients can be
+processed at active interfaces. Applied to nuclear waste---more than 95{,}000 metric tons
+of spent fuel emitting gamma radiation for centuries---this perspective suggests a pathway
+to transform liability into asset. We argue for developing synthetic boundary materials
+that mimic nature's active interfaces, converting radiation to usable energy rather than
+merely blocking it. The physics permits it in principle, biology demonstrates
+radiation-responsive interfaces, and engineering is beginning to explore the relevant
+design space.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+% ------------------------------------------------------------------
+\section{The Containment Assumption}
+% ------------------------------------------------------------------
+
+Since the Manhattan Project, nuclear safety has been an exercise in containment. The
+logic is straightforward: ionizing radiation damages living tissue; therefore, place mass
+between source and environment. This assumption has produced remarkable
+engineering---reactor containments, dry casks, deep geological repositories---but it has
+also constrained imagination. Every improvement has been a better wall: thicker, smarter,
+more redundant.
+
+What if the assumption is incomplete? Walls treat radiation as purely destructive,
+something to be stopped at all costs. But in nature, high-energy gradients are not merely
+survived; they are exploited. Life at hydrothermal vents does not build walls against
+400\textdegree C water; it builds membranes that harvest the gradient. The difference is
+fundamental: passive blocking versus active conversion.
+
+% ------------------------------------------------------------------
+\section{Nature's Precedent: Life at Boundaries}
+% ------------------------------------------------------------------
+
+Hydrothermal vents are among Earth's most extreme environments: temperatures exceeding
+400\textdegree C, pressures crushing, chemistry toxic. Yet they teem with life. Tube
+worms, archaea, and other extremophiles thrive by metabolizing the thermal and chemical
+gradients themselves. Their secret is the boundary layer---the interface between vent
+fluid and cold ocean water.
+
+These organisms do not resist the gradient; they use it. Electron transport chains couple
+to temperature differences. Enzymes function where proteins should denature. The boundary
+is not a barrier but a converter---an active surface that transforms environmental
+hostility into biological opportunity.
+
+This is not a niche adaptation. It is a universal principle: life succeeds at energy
+gradients by developing interfaces that process rather than block.
+
+% ------------------------------------------------------------------
+\section{Radiotrophic Life: Eating Radiation}
+% ------------------------------------------------------------------
+
+In 2007, researchers discovered that \textit{Cryptococcus neoformans}, a
+melanin-containing fungus, grows toward radiation sources. Melanin---a conjugated polymer
+found in skin, hair, and fungi---undergoes radiation-induced electronic and redox changes
+associated with enhanced growth and measurable electrochemical effects under gamma
+exposure~\cite{dadachova2007,turick2011}. The fungus demonstrates productive interaction
+with radiation, not mere shielding.
+
+Similarly, \textit{Deinococcus radiodurans} survives ionizing radiation doses thousands
+of times lethal to humans through rapid DNA repair. It does not prevent damage; it fixes
+damage faster than it accumulates.
+
+These organisms reveal a biological truth: radiation is not only a hazard. It is also a
+resource. Evolution has repeatedly found ways to convert ionizing radiation into usable
+energy or to repair its effects. The tools are different---melanin for conversion, repair
+enzymes for damage---but the strategy is the same: engage actively with the energy source.
+
+% ------------------------------------------------------------------
+\section{The Interface Argument: From Walls to Membranes}
+% ------------------------------------------------------------------
+
+Information theory tells us that boundaries between systems are where information arises.
+In thermodynamics, gradients across boundaries represent usable energy. Current nuclear
+containment treats the boundary as a wall---inert, passive, sacrificial. But every
+natural system that operates successfully at extreme gradients uses an active
+boundary---a membrane that processes, converts, and responds.
+
+Consider soap disrupting oil--water surface tension. The soap molecule does not oppose
+the interface; it changes the boundary conditions so the interface behaves differently.
+Similarly, a biomimetic nuclear boundary would not block radiation; it would change how
+radiation interacts with the material, converting photon energy to electrical current.
+
+The vacuum environment proposed for such systems represents one design option among
+several. Vacuum maximizes thermal gradients by eliminating convective cooling and
+minimizes neutron activation by removing moderating material. However, it also
+complicates thermal management and requires robust containment. The sharp boundary
+created by vacuum illustrates the principle, though terrestrial implementations might
+use different interface designs.
+
+% ------------------------------------------------------------------
+\section{Application: Spent Fuel as Resource, Not Waste}
+% ------------------------------------------------------------------
+
+The United States stores more than 95{,}000 metric tons of spent nuclear fuel across 79
+sites, with approximately 2{,}000 tons added annually~\cite{doe2025}. This material emits
+gamma radiation for centuries, currently managed at substantial cost with zero energy
+recovery.
+
+If a synthetic boundary material could convert even 1\% of the gamma emission to
+electricity, spent fuel transforms from the world's most expensive garbage into a
+long-duration power source. Not fusion, not fission---decay harvesting. The power density
+is low ($\sim$1~kW/ton after ten years), but the duration is extraordinary: centuries of
+baseline power.
+
+The timescale matters. Biological systems think in generations; spent fuel emits across
+civilizations. There is a resonance here about long-term thinking---about designing
+systems that last as long as the problem they address.
+
+% ------------------------------------------------------------------
+\section{The Graded Boundary: A Gamma Energy Ladder}
+\label{sec:graded}
+% ------------------------------------------------------------------
+
+The efficiency challenge points to a fundamental insight: we should not ask one material
+to handle the entire energy transformation. Nature rarely works in single leaps. At
+hydrothermal vents, energy cascades through trophic levels; each organism handles a
+portion of the gradient.
+
+For gamma radiation, this suggests a \emph{graded boundary}: not a single interface, but
+a layered structure that steps photon energy down through successive interactions. This
+concept builds on established graded-Z shielding approaches used in space radiation
+protection~\cite{atwell2013} and nuclear medicine, but redirects them toward energy
+harvesting rather than mere attenuation.
+
+\subsection*{How It Could Work}
+
+\begin{enumerate}
+    \item \textbf{High-Z layer (tungsten/lead):} Compton scattering and pair production
+    convert MeV gamma photons into lower-energy X-rays (keV range). This is energy
+    down-conversion, not blocking.
+
+    \item \textbf{Medium-Z layer (iron/copper):} Further scattering and photoelectric
+    absorption continue the energy reduction.
+
+    \item \textbf{Low-Z conversion layer (melanin/organic/semiconductor):} Absorbs the
+    now-lower-energy photons and converts them to electrical current.
+\end{enumerate}
+
+This approach addresses multiple challenges simultaneously. Each layer operates near its
+optimal energy range; energy deposition spreads across layers, potentially reducing
+radiation damage to any single material; and no single miracle material is required---a
+smart stack of existing and engineered materials will suffice.
+
+The graded boundary acts conceptually as a prism for gamma rays---not bending them in
+space, but stepping them down in energy space. This is the proposed membrane: not a
+wall, but a structured interface for radiation processing.
+
+% ---- Figure placeholder ----
+\begin{figure}[h]
+\centering
+% \includegraphics[width=0.75\textwidth]{figures/graded_stack.pdf}
+\fbox{\parbox{0.75\textwidth}{\centering\vspace{2cm}
+\textit{[Figure 1: Schematic of graded-Z boundary stack.\\
+High-Z $\to$ Medium-Z $\to$ Conversion layer.\\
+Energy ladder: MeV $\to$ keV $\to$ electrical current.]}
+\vspace{2cm}}}
+\caption{Conceptual graded-Z boundary stack for gamma energy harvesting. Each layer
+is tuned to a different photon energy range, stepping radiation energy down toward
+the conversion layer. (Figure in preparation.)}
+\label{fig:graded_stack}
+\end{figure}
+
+\medskip
+\noindent\textbf{Important caveat:} While graded-Z shielding is established for
+radiation protection, its application to energy harvesting remains proposed rather
+than demonstrated. Prior direct gamma-to-electricity experiments achieved $\sim$1--2\%
+efficiency but suffered from rapid degradation~\cite{tanabe2010}, highlighting the
+stability challenge that any practical system must overcome.
+
+% ------------------------------------------------------------------
+\section{What Would Be Required: Honest Gaps}
+% ------------------------------------------------------------------
+
+The graded boundary concept clarifies the engineering pathway but reveals significant
+challenges:
+
+\begin{enumerate}
+    \item \textbf{Efficiency--stability tradeoff:} Prior gamma conversion experiments
+    achieved $\sim$1--2\% efficiency but suffered rapid degradation~\cite{tanabe2010}.
+    Any practical system must maintain performance over decades.
+
+    \item \textbf{Layer integration:} Designing interfaces between dissimilar materials
+    that maintain function under radiation and thermal stress.
+
+    \item \textbf{Scalability:} Manufacturing square meters of consistent, layered
+    material at reasonable cost.
+
+    \item \textbf{Self-repair:} Incorporating mechanisms for long-term operation in
+    high-radiation environments.
+\end{enumerate}
+
+Recent advances provide starting points but not complete solutions:
+\begin{itemize}
+    \item Graded-Z shielding research demonstrates layered radiation processing~\cite{atwell2013}
+    \item Engineered melanin shows improved radiation protection~\cite{deng2025}
+    \item Fungal biocomposites demonstrate radiation stability in low Earth orbit~\cite{casadevall2025}
+    \item DARPA's Engineered Living Materials program explores self-repairing systems~\cite{darpa2025}
+\end{itemize}
+
+The strongest claim supported by current literature is: biology shows radiation-responsive
+interfaces exist; graded-Z engineering shows layered radiation processing works;
+therefore, a biomimetic, layered radiation-harvesting boundary is a legitimate research
+direction. The claim that practical, economical harvesting is near at hand is not yet
+supported.
+
+% ------------------------------------------------------------------
+\section{Self-Repair and Longevity}
+% ------------------------------------------------------------------
+
+Biological systems do not just convert energy; they maintain themselves. DNA repair,
+protein turnover, cellular regeneration---these are nature's solutions to cumulative
+damage. A graded boundary for nuclear applications would need similar capabilities,
+especially in its outer layers where radiation damage is highest.
+
+The graded structure itself provides a repair strategy: outer layers can be designed as
+sacrificial, protecting inner conversion layers. Synthetic biology offers pathways for
+materials that secrete repair compounds or incorporate living components that grow and
+regenerate. The goal is not a static barrier but a dynamic boundary that maintains
+function over decades---a living membrane, not a dead wall.
+
+% ------------------------------------------------------------------
+\section{Conclusion: From Opposition to Utilization}
+% ------------------------------------------------------------------
+
+We have spent 80 years building better walls. Nature has spent three billion years
+building better membranes. The question is no longer whether radiation can interact
+productively with a boundary interface---biology and direct-conversion experiments show
+that it can. The open question is whether we can engineer those interactions at the
+scale, durability, and efficiency that spent fuel demands.
+
+This is not merely a technical challenge; it is a philosophical shift. It asks us to see
+nuclear materials not as something to be feared and buried, but as something to be
+understood and utilized. It asks us to learn from life's oldest strategies: do not resist
+the gradient; eat it.
+
+This paper establishes the conceptual and biological foundation for radiation harvesting
+at nuclear interfaces. Paper II of this series will detail experiments, materials
+specifications, and engineering designs for the graded-Z boundary stack described in
+Section~\ref{sec:graded}.
+
+% ------------------------------------------------------------------
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+% ------------------------------------------------------------------
 
 \end{document}
