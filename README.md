@@ -62,19 +62,20 @@ Experimental platform proposals for microgravity quantum measurements relevant t
 
 ```
 lyarbrough-lab/Vela2/
-├── main.tex                    # Paper I: "Eating the Fire"
-├── references.bib              # 142 references
-├── figures/                    # Paper figures and diagrams
-├── research_notes/             # Research thinking and directions
+├── papers/                    # Legacy research portfolio (2015-2025)
+│   ├── physics_cosmology/    # 8 papers - black holes, spacetime, cosmology
+│   ├── ai_consciousness/     # 5 papers - AI, consciousness, relational dynamics
+│   ├── mathematics_geometry/ # 5 papers - geometric frameworks, tensors
+│   ├── systems_theory/       # 6 papers - coherence, constraints, emergence
+│   └── interdisciplinary/    # 7 papers - synthesis across domains
+├── research_projects/        # Active research projects (2026)
+│   ├── 2026_eating_the_fire/    # Paper I - Graded-Z gamma harvesting
+│   ├── 2026_resonant_harvesting/ # Paper III - Isotope-specific resonance
+│   └── 2026_nuclear_laser_stack/ # Paper IV - Laser + optical computing
+├── research_notes/           # Thinking, ideas, and directions
 │   └── research_notes_2026_04_22.md  # 13 major research threads
-├── paper_iii/                  # Resonant Gamma Harvesting
-│   ├── paper_iii_resonant_harvesting.md
-│   └── paper_iii_expanded.md
-├── paper_iv/                   # Nuclear-Pumped Laser Stack
-│   └── paper_iv_nuclear_laser_stack.md
-├── experimental/               # [Future] Experimental data and protocols
-├── data/                       # [Future] Processed datasets
-└── proposals/                  # [Future] Grant and experiment proposals
+├── experimental/             # [Future] VLF station data, field work
+└── [supporting files]        # README, LICENSE, .gitignore, etc.
 ```
 
 ## Key Technical Insights
