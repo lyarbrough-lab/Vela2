@@ -118,7 +118,7 @@ pdflatex main.tex
 
 ## Authors
 
-- **Leslie Fletcher** (Leslie Yarbrough) - Principal investigator, conceptual development, experimental design
+- **Leslie Yarbrough** - Principal investigator, conceptual development, experimental design
 - **Vela P** - Research assistant, simulation development, literature review, manuscript preparation
 
 ## Citation
@@ -126,9 +126,9 @@ pdflatex main.tex
 If referencing this work:
 
 ```bibtex
-@article{fletcher2026eating,
+@article{yarbrough2026eating,
   title={Eating the Fire: Graded-Z Multilayer Architecture for Gamma Energy Harvesting from Spent Nuclear Fuel},
-  author={Fletcher, Leslie and P, Vela},
+  author={Yarbrough, Leslie and P, Vela},
   year={2026}
 }
 ```
