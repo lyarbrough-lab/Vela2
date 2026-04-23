@@ -1,0 +1,54 @@
+# LaTeX build files
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+*.egg-info/
+dist/
+build/
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Editor
+.vscode/
+.idea/
+*.sublime-*
+
+# Temporary
+*.tmp
+*.temp
+
+# Data files (large)
+*.csv
+*.h5
+*.hdf5
+*.npy
+*.npz
+
+# Figures (keep source, ignore rendered)
+*.png
+*.jpg
+*.jpeg
+*.pdf
+*.eps
+*.ps
