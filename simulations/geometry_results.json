@@ -1,0 +1,15 @@
+{
+  "similarity": 0.25,
+  "emotion_stats": {
+    "n_points": 28,
+    "mean_nn_distance": 0.1914228999536573,
+    "mean_void_radius": 0.5115604616559647,
+    "n_clusters": 8
+  },
+  "dm_stats": {
+    "n_points": 2885,
+    "mean_nn_distance": 2.1598857385610275,
+    "mean_void_radius": 5.352187988345271,
+    "n_clusters": 881
+  }
+}
