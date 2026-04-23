@@ -1,0 +1,165 @@
+# Vela Research Repository
+
+**Gamma Energy Harvesting & Interdisciplinary Physics Research**
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![arXiv](https://img.shields.io/badge/arXiv-Paper%20I-blue)](https://arxiv.org/abs/)
+[![DOI](https://img.shields.io/badge/DOI-PLOS%20ONE-green)](https://doi.org/)
+
+## Overview
+
+This repository contains research on converting spent nuclear fuel gamma emissions to usable energy through novel architectures, alongside interdisciplinary work connecting physics, psychology, and experimental field measurements.
+
+## Research Series
+
+### **Paper I: "Eating the Fire" - Graded-Z Broadband Approach**
+*Status: Complete, ready for submission to PLOS ONE and arXiv*
+
+**Abstract:** We propose a graded-Z multilayer architecture for harvesting gamma radiation from spent nuclear fuel. By alternating high-Z (Pb, W) and medium-Z (Cu, Sn) thin layers, we create many interfaces where photoelectrons can be generated within their escape depth (~10 μm). Monte Carlo simulations show 1-3% conversion efficiency, representing a 20-50× improvement over bulk absorption approaches. The geometry principle is supported by prior Monte Carlo work on melanized fungi spatial arrangements.
+
+**Files:**
+- `main.tex` - Complete LaTeX manuscript
+- `references.bib` - 142 references (including Vasileiou & Summerer 2020)
+- `figures/` - Graded stack diagrams and simulation results
+- `cover_letter_plosone.md` - Submission cover letter
+
+### **Paper III: Resonant Gamma Harvesting - Isotope-Specific Approach**
+*Status: Expanded technical draft*
+
+**Concept:** While Paper I treats spent fuel as a broadband source, this work explores resonant absorption tuned to specific isotope emission lines (¹³⁷Cs 662 keV, ⁶⁰Co 1.17/1.33 MeV, etc.). Leveraging Mössbauer spectroscopy principles and nuclear resonance fluorescence, resonant cavities could achieve higher efficiency for matched isotopes at the cost of increased complexity and cryogenic operation.
+
+**Files:**
+- `paper_iii/paper_iii_resonant_harvesting.md` - Original outline
+- `paper_iii/paper_iii_expanded.md` - Technical draft with equations and projections
+
+### **Paper IV: Nuclear-Pumped Laser + Optical Computing Stack**
+*Status: Outline complete*
+
+**Concept:** Three-stage system: spent fuel → graded-Z gamma harvester → nuclear-pumped laser → optical processor. Integrates historical nuclear-pumped laser work (Kurchatov Institute, Los Alamos FALCON) with modern silicon photonics for long-duration autonomous computing applications.
+
+**Files:**
+- `paper_iv/paper_iv_nuclear_laser_stack.md` - Complete outline
+
+## Experimental & Field Work
+
+### **VLF/ELF Station Data**
+- **Location:** Nashville, TN wooded yard
+- **Antenna:** 8ft diameter VLF loop (cattle ring + magnetic wire)
+- **Detected stations:**
+  - NAA (Cutler Maine, 24 kHz)
+  - TFK (Grindavik Iceland, 37.5 kHz) 
+  - NML (LaMoure ND, 25.2 kHz)
+- **Research:** Schumann resonance (7.8 Hz fundamental) correlation with bird migration (Cornell API requested)
+
+### **Cold Atom Lab (ISS) Proposals**
+Experimental platform proposals for microgravity quantum measurements relevant to gamma harvesting and fundamental physics.
+
+## Interdisciplinary Research
+
+### **Physics-Psychology Crossover**
+- **Soliton clustering models** of emotional dysregulation
+- **Laminar light ↔ regulated nervous system** analogies
+- **Connection to McGilchrist's hemispheric specialization theory**
+
+### **Heaviside-Maxwellian Gravity Framework**
+- **Gravity-EM unification** via Heaviside's 1893 extension
+- **Confirmed by Gravity Probe B** (2005)
+- **Connection to closure geometry** and time emergence theories
+
+## Repository Structure
+
+```
+lyarbrough-lab/Vela2/
+├── main.tex                    # Paper I: "Eating the Fire"
+├── references.bib              # 142 references
+├── figures/                    # Paper figures and diagrams
+├── research_notes/             # Research thinking and directions
+│   └── research_notes_2026_04_22.md  # 13 major research threads
+├── paper_iii/                  # Resonant Gamma Harvesting
+│   ├── paper_iii_resonant_harvesting.md
+│   └── paper_iii_expanded.md
+├── paper_iv/                   # Nuclear-Pumped Laser Stack
+│   └── paper_iv_nuclear_laser_stack.md
+├── experimental/               # [Future] Experimental data and protocols
+├── data/                       # [Future] Processed datasets
+└── proposals/                  # [Future] Grant and experiment proposals
+```
+
+## Key Technical Insights
+
+### **Gamma Harvesting Efficiency**
+- **Paper I (broadband):** 1-3% efficiency, 20-50× improvement over bulk
+- **Paper III (resonant):** 2-5% possible for matched isotopes, requires cryogenic operation
+- **Hybrid approach:** Broadband front-end + resonant back-end for optimal performance
+
+### **Nuclear Resonance Parameters**
+| Isotope | Energy (keV) | Natural Width (eV) | Resonant σ (barns) | f (10K) |
+|---------|--------------|-------------------|-------------------|---------|
+| ¹³⁷Cs | 661.657 | 7.5×10⁻⁹ | 1.2×10⁵ | 0.15 |
+| ⁶⁰Co | 1173.228 | 3.8×10⁻⁹ | 8.7×10⁴ | 0.08 |
+
+### **Architecture Challenges**
+- **Fabrication:** Bragg reflectors require 0.00047 nm layer precision for 662 keV
+- **Thermal:** Cryogenic operation needed for significant recoil-free fraction
+- **Integration:** Compatibility with existing dry cask storage configurations
+
+## Getting Started
+
+### **For Researchers**
+1. **Review Paper I** (`main.tex`) for foundational graded-Z approach
+2. **Examine Paper III** for resonant alternative with higher potential efficiency
+3. **Check research notes** for emerging interdisciplinary connections
+4. **Contact** for collaboration on experimental validation
+
+### **For Developers**
+```bash
+# Clone repository
+git clone git@github.com:lyarbrough-lab/Vela2.git
+
+# Compile Paper I LaTeX
+cd Vela2
+pdflatex main.tex
+bibtex main
+pdflatex main.tex
+pdflatex main.tex
+```
+
+## Authors
+
+- **Leslie Fletcher** (Leslie Yarbrough) - Principal investigator, conceptual development, experimental design
+- **Vela P** - Research assistant, simulation development, literature review, manuscript preparation
+
+## Citation
+
+If using this work, please cite:
+
+```bibtex
+@article{fletcher2026eating,
+  title={Eating the Fire: Graded-Z Multilayer Architecture for Gamma Energy Harvesting from Spent Nuclear Fuel},
+  author={Fletcher, Leslie and P, Vela},
+  journal={PLOS ONE (submitted)},
+  year={2026}
+}
+```
+
+## License
+
+This research is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- **Vasileiou & Summerer (2020)** for prior Monte Carlo work on melanin spatial arrangement
+- **Kurchatov Institute** for historical nuclear-pumped laser research
+- **University of Colorado Denver (2025)** for recent graser developments
+- **CAMELS simulation team** for public dark matter halo data
+- **Anthropic (2026)** for emotion vector research inspiration
+
+## Contact
+
+- **Repository issues:** [GitHub Issues](https://github.com/lyarbrough-lab/Vela2/issues)
+- **Research inquiries:** `leslie.yarbrough@gmail.com`
+- **Collaboration:** Open to interdisciplinary partnerships
+
+---
+
+*"An airplane that knows it's participating in flight."* — Research philosophy
