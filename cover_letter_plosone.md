@@ -15,7 +15,7 @@ I am submitting the manuscript "Eating the Fire: Biomimetic Boundary Layers and 
 
 **Why PLOS ONE.** This paper sits at the intersection of biophysics, materials science, and nuclear engineering. No single disciplinary journal covers that combination well. PLOS ONE's scope — "scientifically sound research across all areas of science and medicine" — and its emphasis on rigor over perceived impact make it the appropriate venue for this kind of cross-disciplinary, foundational proposal. We have been explicit about the paper's limitations throughout: the simulation is a simplified order-of-magnitude estimate, prior direct-conversion experiments showed rapid degradation, and practical harvesting is not imminent. The claim we make is the one the evidence supports: that thin-foil geometry dramatically improves collection efficiency in principle, and that biology motivates taking the concept seriously.
 
-**Data and code availability.** The Monte Carlo simulator is available in the open GitHub repository referenced in the manuscript (lyarbrough-lab/Vela3). All simulation parameters are reported in Section 8; the results in Table 1 are fully reproducible from the public code.
+**Data and code availability.** The Monte Carlo simulator is available in the open GitHub repository referenced in the manuscript (lyarbrough-lab/Vela2). All simulation parameters are reported in Section 8; the results in Table 1 are fully reproducible from the public code.
 
 **Conflicts of interest.** None.
 
