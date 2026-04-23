@@ -1,0 +1,55 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\lstset{
+  basicstyle=\small\ttfamily,
+  breaklines=true,
+  frame=single,
+  backgroundcolor=\color{gray!10}
+}
+
+\title{Supplementary Material: Monte Carlo Simulation Code\\
+\large Eating the Fire: Biomimetic Boundary Layers and the\\
+Case for Radiation Harvesting at Nuclear Interfaces}
+\author{Leslie Yarbrough}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\section*{Simulation Overview}
+The thin-foil gamma harvesting simulator models photon transport through
+layered absorber stacks at 2~MeV. Three interaction mechanisms are modeled:
+Compton scattering, pair production, and photoelectric absorption.
+Interaction type is selected probabilistically from linear attenuation
+coefficients for tungsten. Charge collection is determined by whether the
+resulting secondary electron can reach a layer boundary within its
+approximate range of 10~$\mu$m in metal.
+
+The simulator is available at:
+\url{https://github.com/lyarbrough-lab/Vela3}
+
+\section*{Key Results}
+\begin{center}
+\begin{tabular}{rrrr}
+\hline
+Layer thickness ($\mu$m) & No.\ layers & Collection (\%) & vs.\ bulk \\
+\hline
+26000 (bulk) & 1    & $\approx 0$  & 1$\times$ \\
+5000         & 5    & 0.017        & 17$\times$ \\
+1000         & 26   & 0.030        & 30$\times$ \\
+500          & 52   & 0.101        & 101$\times$ \\
+100          & 260  & 0.372        & 372$\times$ \\
+50           & 520  & 0.933        & 933$\times$ \\
+10           & 2600 & 3.391        & $>3000\times$ \\
+5            & 5200 & 3.884        & $>3000\times$ \\
+\hline
+\end{tabular}
+\end{center}
+
+Total stack thickness held constant at 2.6~cm across all runs.
+
+\end{document}
