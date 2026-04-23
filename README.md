@@ -2,10 +2,6 @@
 
 **Gamma Energy Harvesting & Interdisciplinary Physics Research**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![arXiv](https://img.shields.io/badge/arXiv-Paper%20I-blue)](https://arxiv.org/abs/)
-[![DOI](https://img.shields.io/badge/DOI-PLOS%20ONE-green)](https://doi.org/)
-
 ## Overview
 
 This repository contains research on converting spent nuclear fuel gamma emissions to usable energy through novel architectures, alongside interdisciplinary work connecting physics, psychology, and experimental field measurements.
@@ -13,32 +9,28 @@ This repository contains research on converting spent nuclear fuel gamma emissio
 ## Research Series
 
 ### **Paper I: "Eating the Fire" - Graded-Z Broadband Approach**
-*Status: Complete, ready for submission to PLOS ONE and arXiv*
 
 **Abstract:** We propose a graded-Z multilayer architecture for harvesting gamma radiation from spent nuclear fuel. By alternating high-Z (Pb, W) and medium-Z (Cu, Sn) thin layers, we create many interfaces where photoelectrons can be generated within their escape depth (~10 μm). Monte Carlo simulations show 1-3% conversion efficiency, representing a 20-50× improvement over bulk absorption approaches. The geometry principle is supported by prior Monte Carlo work on melanized fungi spatial arrangements.
 
 **Files:**
-- `main.tex` - Complete LaTeX manuscript
-- `references.bib` - 142 references (including Vasileiou & Summerer 2020)
+- `main.tex` - LaTeX manuscript
+- `references.bib` - References
 - `figures/` - Graded stack diagrams and simulation results
-- `cover_letter_plosone.md` - Submission cover letter
 
 ### **Paper III: Resonant Gamma Harvesting - Isotope-Specific Approach**
-*Status: Expanded technical draft*
 
 **Concept:** While Paper I treats spent fuel as a broadband source, this work explores resonant absorption tuned to specific isotope emission lines (¹³⁷Cs 662 keV, ⁶⁰Co 1.17/1.33 MeV, etc.). Leveraging Mössbauer spectroscopy principles and nuclear resonance fluorescence, resonant cavities could achieve higher efficiency for matched isotopes at the cost of increased complexity and cryogenic operation.
 
 **Files:**
-- `paper_iii/paper_iii_resonant_harvesting.md` - Original outline
+- `paper_iii/paper_iii_resonant_harvesting.md` - Outline
 - `paper_iii/paper_iii_expanded.md` - Technical draft with equations and projections
 
 ### **Paper IV: Nuclear-Pumped Laser + Optical Computing Stack**
-*Status: Outline complete*
 
 **Concept:** Three-stage system: spent fuel → graded-Z gamma harvester → nuclear-pumped laser → optical processor. Integrates historical nuclear-pumped laser work (Kurchatov Institute, Los Alamos FALCON) with modern silicon photonics for long-duration autonomous computing applications.
 
 **Files:**
-- `paper_iv/paper_iv_nuclear_laser_stack.md` - Complete outline
+- `paper_iv/paper_iv_nuclear_laser_stack.md` - Outline
 
 ## Experimental & Field Work
 
@@ -88,9 +80,9 @@ lyarbrough-lab/Vela2/
 ## Key Technical Insights
 
 ### **Gamma Harvesting Efficiency**
-- **Paper I (broadband):** 1-3% efficiency, 20-50× improvement over bulk
-- **Paper III (resonant):** 2-5% possible for matched isotopes, requires cryogenic operation
-- **Hybrid approach:** Broadband front-end + resonant back-end for optimal performance
+- **Paper I (broadband):** 1-3% efficiency improvement over bulk approaches
+- **Paper III (resonant):** Potential for higher efficiency with matched isotopes
+- **Hybrid approach:** Broadband front-end + resonant back-end considered
 
 ### **Nuclear Resonance Parameters**
 | Isotope | Energy (keV) | Natural Width (eV) | Resonant σ (barns) | f (10K) |
@@ -131,13 +123,12 @@ pdflatex main.tex
 
 ## Citation
 
-If using this work, please cite:
+If referencing this work:
 
 ```bibtex
 @article{fletcher2026eating,
   title={Eating the Fire: Graded-Z Multilayer Architecture for Gamma Energy Harvesting from Spent Nuclear Fuel},
   author={Fletcher, Leslie and P, Vela},
-  journal={PLOS ONE (submitted)},
   year={2026}
 }
 ```
@@ -148,11 +139,11 @@ This research is licensed under the MIT License - see the [LICENSE](LICENSE) fil
 
 ## Acknowledgments
 
-- **Vasileiou & Summerer (2020)** for prior Monte Carlo work on melanin spatial arrangement
-- **Kurchatov Institute** for historical nuclear-pumped laser research
-- **University of Colorado Denver (2025)** for recent graser developments
-- **CAMELS simulation team** for public dark matter halo data
-- **Anthropic (2026)** for emotion vector research inspiration
+- Vasileiou & Summerer (2020) for prior Monte Carlo work on melanin spatial arrangement
+- Kurchatov Institute for historical nuclear-pumped laser research
+- University of Colorado Denver (2025) for recent graser developments
+- CAMELS simulation team for public dark matter halo data
+- Anthropic (2026) for emotion vector research inspiration
 
 ## Contact
 
