@@ -23,7 +23,7 @@
 @article{millholland2021,
   author = {{Millholland, S.} and {Lissauer, J. J.} and {Sullivan, G.} and {Selsis, F.} and {Raymond, S. N.} and {Kopparapu, R.} and {Woo, J. M. Y.}},
   title = {New Constraints on the Architecture of Multi-Planet Systems from the Radius Gap},
-  journal = {ApJL},
+  journal = {ApJl},
   volume = {920},
   number = {1},
   pages = {L14},
@@ -78,7 +78,7 @@
 @article{haisch2001,
   author = {{Haisch, K. E.} and {Lada, E. A.} and {Lada, C. J.}},
   title = {Disk Frequencies and Lifetimes in Young Clusters},
-  journal = {ApJL},
+  journal = {ApJl},
   volume = {553},
   number = {2},
   pages = {L153},
@@ -87,10 +87,32 @@
 }
 
 @article{sicilia_aguilar,
-  author = {{Sicilia-Aguilar, A.} and {Henning, T.} and {Hartmann, L.} and {MacGregor, M.}},
+  author = {{Sicilia-Aguilar, A.} and {Henning, T.} and {Hartmann, L.} and others},
   title = {Accretion, Evolution, and Disk Properties in Star-Forming Regions},
   journal = {ApJ},
   volume = {710},
   pages = {1067},
   year = {2010}
+}
+
+@article{lissauer2011,
+  author = {{Lissauer, J. J.} and {Ragozzine, D.} and {Fabrycky, D. C.} and {Steffen, J. H.} and {Ford, E. B.} and {Jenkins, J. M.} and {Shporer, A.} and {Holman, M. J.} and {Rowe, J. F.} and {Quintana, E. V.} and {Batalha, N. M.} and {Borucki, W. J.} and {Bryson, S. T.} and {Caldwell, D. A.} and {Carter, J. A.} and {Ciardi, D.} and {Dunham, E. W.} and {Fortney, J. J.} and {Gautier, T. N.} and {Howell, S. B.} and {Koch, D. G.} and {Latham, D. W.} and {Marcy, G. W.} and {Morehead, R. C.} and {Sasselov, D.}),
+  title = {Architecture and Dynamics of Kepler's Candidate Multiple Transiting Planet Systems},
+  journal = {ApJS},
+  volume = {197},
+  number = {1},
+  pages = {8},
+  year = {2011},
+  doi = {10.1088/0067-0049/197/1/8}
+}
+
+@article{he2021,
+  author = {{He, M. Y.} and {Ford, E. B.} and {Ragozzine, D.} and {Selsis, F.} and {Raymond, S. N.} and {Kopparapu, R.}},
+  title = {Architectures of Multi-Planet Systems},
+  journal = {AJ},
+  volume = {161},
+  number = {1},
+  pages = {16},
+  year = {2021},
+  doi = {10.3847/1538-3881/abc26c}
 }
