@@ -10,6 +10,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{hyperref}
+\usepackage{epigraph}
 
 \shorttitle{Stellar Mass Shapes Gravitational Bonding}
 \shortauthors{Yarbrough}
@@ -20,6 +21,8 @@
 
 \author{Leslie Yarbrough}
 \affiliation{Vela Research Collective}
+
+\graphicspath{{../figures/}}
 
 \begin{abstract}
 In multi-planet systems, adjacent planets often lock into simple-integer period
@@ -201,6 +204,13 @@ M (78\%), K (67\%), G (62\%), F (70\%). The pure molecule gap widens under
 transit-only: M dwarfs 41\% vs.\ G dwarfs 25\%---a 16-point gap compared to 14
 in the full sample. This rules out simple RV detection bias as the cause.
 
+\begin{figure*}[t!]
+\centering
+\includegraphics[width=\textwidth]{fig1_ushape.png}
+\caption{(a) Bond fraction by stellar mass. Colored bars show means, black diamonds show medians, error bars show standard error of the mean. (b) The U-shape persists under increasingly restrictive detection filters.}
+\label{fig:ushape}
+\end{figure*}
+
 \subsection{Bond Quality: Tightness}
 
 \begin{table}
@@ -221,10 +231,17 @@ Bond type & M dwarf & K dwarf & G dwarf & F dwarf \\
 \end{table}
 
 M dwarfs produce the tightest bonds (Table~\ref{tab:tightness}). G dwarfs
-produce the loosest bonds in 5 of 7 major resonance types. This is the opposite
+produce the loosest bonds in 5 of 7 major resonance types (Figure~\ref{fig:tightness}). This is the opposite
 of the ``survivor bias'' prediction---if G dwarfs bond less, one might expect
 the surviving bonds to be deeper---and supports a model where bond quality
 reflects post-capture dynamical settling time, not selective survival.
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\columnwidth]{fig2_tightness.png}
+\caption{Mean fractional deviation from exact resonance for 6 major bond types, by stellar type. Lower values = tighter bonds. M dwarfs produce the tightest 3:2 and 5:3 bonds.}
+\label{fig:tightness}
+\end{figure}
 
 \subsection{Stability-Filtered Null}
 
@@ -246,7 +263,7 @@ high-mass (1.2--1.6)  & 30 & 60.5\% & 54.0\% & $+6.5\%$ \\
 \label{tab:null}
 \end{table}
 
-The stability-filtered null (Table~\ref{tab:null}) reveals that the G-dwarf
+The stability-filtered null (Table~\ref{tab:null}; Figure~\ref{fig:null}) reveals that the G-dwarf
 bond fraction is indistinguishable from random packing within stability bounds
 (52.6\% observed vs.\ 52.9\% null). M and high-mass dwarfs show genuine excess
 bonding above the null. This means:
@@ -259,6 +276,13 @@ bonding above the null. This means:
   \item Gravitational ``chemistry''---bonded structure beyond random
         survival---is a specific phenomenon of certain stellar environments.
 \end{enumerate}
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\columnwidth]{fig3_stability_null.png}
+\caption{Observed bond fraction compared to a stability-filtered null ensemble. G dwarfs are indistinguishable from random packing (observed 52.6\% vs. null 52.9\%), while M and F dwarfs show genuine excess bonding.}
+\label{fig:null}
+\end{figure}
 
 \subsection{Notable Systems}
 
@@ -346,6 +370,62 @@ This may be the deepest claim from this data: \textit{gravitational bonding
 chemistry has its own ``reaction temperature,'' set by the host star's disk
 properties.}
 
+\section{Age-Bond Correlation}
+\label{sec:agebond}
+
+If the two-mechanism model is correct, bond fraction should evolve over time\\
+within each mass bin. Slow tidal evolution and post-capture dynamical\\
+settling should deepen and multiply bonds in M-dwarf systems. In G- and\\
+F-dwarf systems, longer-term dynamical instability should slowly erode\\
+bonds---systems that avoid early destruction will have had more time for\\
+their sparse bonds to scatter apart.
+
+We test this using stellar ages from the literature\citep{galactic_archaeology},
+available for 304 of 349 host stars in our sample.
+
+\begin{figure*}[t!]
+\centering
+\includegraphics[width=\textwidth]{fig4_age_bond.png}
+\caption{Bond fraction vs.\ stellar age, separated by stellar type. Black squares show age-binned averages with error bars. M dwarfs are unique: bond fraction increases with age ($\Delta \approx +12.5\%$). All other types decay with age (K: $-9.1\%$, G: $-15.0\%$, F: $-20.1\%$).}
+\label{fig:agebond}
+\end{figure*}
+
+\begin{table}
+\centering
+\caption{Change in bond fraction with stellar age.}
+\begin{tabular}{lcccc}
+\hline
+Star type & $N_{\text{hosts}}$ & Young half & Old half & $\Delta$ \\
+\hline
+M dwarf & 41 & 60.1\% & 72.6\% & $+12.5\%$ \\
+K dwarf & 107 & 61.2\% & 52.1\% & $-9.1\%$ \\
+G dwarf & 100 & 56.3\% & 41.3\% & $-15.0\%$ \\
+F dwarf & 41 & 69.8\% & 49.7\% & $-20.1\%$ \\
+\hline
+\end{tabular}
+\label{tab:agebond}
+\end{table}
+
+The results (Table~\ref{tab:agebond}, Figure~\ref{fig:agebond}) strongly
+support the two-mechanism picture. M dwarfs are unique: their bond fraction
+increases by $+12.5\%$ from young to old systems. This is consistent with
+continued tidal locking---planets in M-dwarf systems continue to settle into
+resonance over Gyr timescales, deepening and multiplying their bonds well after
+the disk has dissipated. The age-bond correlation is positive, not negative.
+
+K, G, and F dwarfs all show the opposite trend. Bond fraction decays with age,
+most dramatically in F dwarfs ($-20.1\%$). This is consistent with a picture
+where bonds are formed during the disk phase but slowly eroded by dynamical
+instability over Gyr timescales. Systems that retain many bonds into old age
+are rare because long-term stability is harder to maintain in these
+environments.
+
+The age-bond correlation provides a critical test that distinguishes the two
+mechanisms. ``Slow cooking'' (M dwarfs) predicts bonds accumulate with time.
+``Fast chemistry'' (F dwarfs) predicts bonds form rapidly then decay. The data
+support both predictions. The G-dwarf deficit deepens with age---their systems
+not only form fewer bonds initially but lose more of them over time.
+
 \section{The Solar System in Context}
 
 Our Solar System orbits a G dwarf ($M_\odot = 1.0$). Table~\ref{tab:solarsys}
@@ -405,6 +485,10 @@ planetary systems can be.
   \item The U-shape is consistent with two distinct mechanisms: M-dwarf
         slow-capture (long disk lifetime, careful settling) and F-dwarf
         fast-capture (short disk lifetime, kinetic capture).
+  \item Age-bond correlations confirm the two mechanisms: M dwarfs uniquely
+        show bond fraction \textit{increasing} with age ($+12.5\%$), consistent
+        with continued tidal settling. K, G, and F dwarfs all show bond decay
+        with age ($-9.1\%$ to $-20.1\%$).
   \item The Solar System, orbiting a G dwarf at the bottom of the bonding
         curve, is a typical G-dwarf system: mostly unstructured, with one
         clean resonance and a few loose near-bonds.
