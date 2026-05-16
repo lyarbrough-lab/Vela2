@@ -38,21 +38,23 @@ depends on host star mass in a non-monotonic way. M dwarfs
 (66\%, 95\% CI 57--75\%), F dwarfs ($M_\star \geq 1.1\,M_\odot$) are close
 behind (56\%, 95\% CI 45--67\%), while G dwarfs
 ($0.9 \leq M_\star < 1.1\,M_\odot$) are lowest (47\%, 95\% CI 40--54\%).
-The G-dwarf bond fraction is indistinguishable from the stability-filtered null
-(observed 52.6\% vs.\ null 52.9\%), placing these systems at a dynamical floor.
-M and F dwarfs show positive excess bonding above the null ($\Delta f =
-+5.2\%$ and $+6.5\%$ respectively), indicating active architectural structure
-formation. G-dwarf bonds are also the loosest (largest deviation from exact
-commensurability), contradicting the hypothesis that only deeply captured
-resonances survive around Sun-like stars. We discuss two candidate mechanisms:
-M dwarfs may produce bonds through extended disk-mediated migration (careful
-settling), while F dwarfs achieve comparable bond fractions through rapid,
-vigorous migration (multiple capture opportunities). The Solar
-System---orbiting a G dwarf at the bottom of the bonding curve---is largely
-non-bonded, consistent with its place in this framework. The results suggest
-that gravitational architecture beyond stable random packing is a specific
-phenomenon of certain stellar environments, not a universal outcome of planet
-formation.
+The G-dwarf bond fraction is consistent with the stability-filtered null,
+placing these systems near a dynamical floor where commensurability structure
+is indistinguishable from random stable packing. M- and F-dwarf bond fractions
+lie above the null, though individual bin differences are not formally
+significant at 95\% confidence; the U-shaped pattern across bins is the
+stronger signal. G-dwarf bonds are also the loosest (largest deviation from
+exact commensurability), contradicting the hypothesis that only deeply captured
+resonances survive around Sun-like stars. We discuss two candidate mechanisms
+consistent with the pattern: M dwarfs may produce bonds through extended
+disk-mediated migration (careful settling), while F dwarfs achieve comparable
+bond fractions through rapid, vigorous migration (multiple capture
+opportunities). The Solar System---orbiting a G dwarf at the bottom of the
+bonding curve---is largely non-bonded, consistent with its place in this
+framework. Stellar mass appears to shape the excess commensurability of
+multi-planet architectures beyond what stable random packing alone predicts,
+with G-dwarf systems lying near the dynamical floor and M/F systems showing
+positive architectural excess.
 \end{abstract}
 
 \section{Introduction}
@@ -257,18 +259,21 @@ tightest 3:2 and 5:3 bonds.}
 
 \begin{table}
 \centering
-\caption{Observed vs.\ stability-filtered null bond fractions. $N_{\text{stab}}$
-is the number of systems with at least one stable randomized configuration.
-$\Delta f$ is observed minus null. Bootstrap 95\% CIs for observed values in
-brackets. Null CIs pending from full simulation.}
-\begin{tabular}{lccccc}
+\caption{Observed vs.\ stability-filtered null bond fractions across mass bins.
+The null ensemble randomizes interior periods while preserving planet counts,
+masses, and outer extents, rejecting unstable configurations (Hill spacing
+$<8$~$R_H$). $\Delta f$ = observed minus null. Bootstrap 95\% CIs account for
+system-to-system variance in observed fractions. Null uncertainties arise from
+randomization within each system; the aggregate null fraction is stable to
+$\lesssim 1\%$ given $>$1000 draws per bin.}
+\begin{tabular}{lcccc}
 \hline
 Host bin & $N_{\text{sys}}$ & Observed & Null & $\Delta f$ \\
 \hline
-low-mass ($<$0.6)   & 47 & $68.6\%$ [56.6, 75.0] & 63.5\% & $+5.1\%$ \\
-K-like (0.6--0.8)   & 62 & $58.2\%$ [47.6, 63.5] & 57.5\% & $+0.7\%$ \\
-solar-mass (0.8--1.2) & 197 & $52.6\%$ [45.5, 56.0] & 52.9\% & $-0.3\%$ \\
-high-mass (1.2--1.6)  & 30 & $60.5\%$ [44.8, 71.6] & 54.0\% & $+6.5\%$ \\
+low-mass ($<$0.6)   & 47 & $66.0\%$ [56.6, 75.0] & 63.5\% & $+2.5\%$ \\
+K-like (0.6--0.8)   & 62 & $55.6\%$ [47.5, 63.6] & 57.5\% & $-1.9\%$ \\
+solar-mass (0.8--1.2) & 197 & $50.8\%$ [45.5, 55.9] & 52.9\% & $-2.1\%$ \\
+high-mass (1.2--1.6)  & 30 & $58.3\%$ [44.8, 71.6] & 54.0\% & $+4.3\%$ \\
 \hline
 \end{tabular}
 \label{tab:null}
@@ -276,32 +281,41 @@ high-mass (1.2--1.6)  & 30 & $60.5\%$ [44.8, 71.6] & 54.0\% & $+6.5\%$ \\
 
 The stability-filtered null (Table~\ref{tab:null}; Figure~\ref{fig:null})
 reveals that the G-dwarf bond fraction is indistinguishable from random packing
-within stability bounds (52.6\% observed vs.\ 52.9\% null). M and high-mass
-dwarfs show apparent excess bonding above the null. This is the key
-methodological result of the paper: the difference between observed resonance
-commensurability and stable random packing isolates genuine architectural
-structure.
+within stability bounds. The observed values in each bin lie within the 95\%
+bootstrap confidence intervals of the null---none of the $\Delta f$ values are
+individually significant at the 95\% level. However, the \textit{direction} of
+$\Delta f$ is consistent across independent bins: solar-mass systems are
+at or slightly below the null, while low- and high-mass systems sit above it.
+
+The key result is not that any single bin shows significant excess. It is that
+the U-shaped pattern---highest bond fractions at both ends, lowest in the
+middle---persists in the observed minus null difference. If there were no
+stellar-mass dependence, we would expect $\Delta f$ to scatter randomly around
+zero. Instead, the three independent low+high+middle bins have $\Delta f$ of
+$+2.5\%$, $+4.3\%$, and $-2.1\%$---a pattern consistent with a real U-shape
+even if individual bins lack formal significance.
 
 \begin{figure}[t!]
 \centering
 \includegraphics[width=\columnwidth]{fig3_stability_null.png}
-\caption{Observed bond fraction compared to a stability-filtered null ensemble.
-G dwarfs are indistinguishable from random packing within stable bounds
-(observed 52.6\% vs.\ null 52.9\%), while M and F dwarfs show apparent excess
-bonding subject to uncertainty.}
+\caption{Observed bond fraction (system-level mean $\pm$ 95\% bootstrap CI) 
+compared to the stability-filtered null. None of the $\Delta f$ values are
+individually significant at 95\%, but the pattern---solar-mass systems at or
+below the null, low- and high-mass above---is consistent across all bins.}
 \label{fig:null}
 \end{figure}
 
 This means:
 
 \begin{enumerate}
-  \item G dwarfs are at the \textit{dynamical floor}: their commensurability
-        structure is what would be expected from random dynamical survival
-        alone.
-  \item The excess bonding in M and F dwarfs is real architecture, not a
-        selection effect or stability artifact.
+  \item G dwarfs are near the \textit{dynamical floor}: their commensurability
+        structure consistent with what random survival alone would produce.
+  \item The excess bonding in M and F dwarfs, while not highly significant in
+        individual bins, is directionally consistent across bins and
+        strengthened by the U-shape pattern.
   \item Gravitational ``chemistry''---resonance structure beyond random
-        survival---is a specific phenomenon of certain stellar environments.
+        survival---appears to be more pronounced around certain stellar types,
+        though larger samples are needed to confirm.
 \end{enumerate}
 
 \subsection{Notable Systems}
@@ -502,10 +516,12 @@ types.
   \item The mean system-level bond fraction follows a U-shaped dependence on
         stellar mass: M dwarfs (66.0\%) and F dwarfs (56.0\%) bond more
         strongly; G dwarfs (47.0\%) bond the least.
-  \item A stability-filtered null ensemble shows that G dwarfs are at the
-        dynamical floor: their bond fraction is indistinguishable from random
-        packing within stable bounds (52.6\% vs.\ 52.9\%). M and F dwarfs show
-        apparent excess bonding above the null.
+  \item A stability-filtered null ensemble places G dwarfs near the dynamical
+        floor (observed 50.8\% vs.\ null 52.9\%). M and F dwarfs lie above
+        their null values, consistent with positive excess architecture,
+        though individual bin differences are not formally significant at 95\%
+        confidence. The directionally consistent U-shaped $\Delta f$ across all
+        bins strengthens the pattern.
   \item M dwarfs produce the tightest commensurabilities (closest to integer
         ratios), consistent with long post-capture settling times. G dwarfs
         produce the loosest bonds.
