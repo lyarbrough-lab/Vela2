@@ -5,3 +5,9 @@
 *.out
 *.toc
 *.gz
+venv/
+data/
+*_backup/
+*_TEMP.*
+*_temp.*
+*.ogg

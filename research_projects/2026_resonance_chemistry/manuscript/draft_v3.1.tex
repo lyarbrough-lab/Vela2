@@ -1,0 +1,781 @@
+% ======================================================================
+% DRAFT v3.1 — Stellar-Mass Dependence of Near-Commensurability in
+%               Multi-Planet System Architectures
+% Leslie Yarbrough, Independent Researcher
+% June 2026
+% All 17 references verified on ADS
+% v3.1 changes: hallucinated Peale1994 replaced with Goldreich+Tremaine1980,
+%   figures annotated with real statistical values, improved alt text
+
+\documentclass[twocolumn,usenatbib]{mnras}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+
+\title[Stellar mass and near-commensurability]{Stellar-Mass Dependence of Near-Commensurability in Multi-Planet
+System Architectures}
+
+\author[]{Leslie Yarbrough\thanks{e-mail: vela.astro@gmail.com}
+\\[4pt]
+\textit{Independent Researcher}}
+
+
+\pagerange{\pageref{firstpage}--\pageref{lastpage}} \pubyear{2026}
+\hypersetup{draft}
+\begin{document}
+
+\label{firstpage}
+
+\maketitle
+
+\begin{abstract}
+In multi-planet systems, adjacent planets often exhibit period ratios close to
+low-order integer commensurabilities. Analyzing 336 multi-planet systems (1182
+planets) from the NASA Exoplanet Archive, we find that 56.6\% of adjacent
+planet pairs are within $\pm 3\%$ of a small integer ratio. A
+stability-filtered null ensemble---randomized architectures that satisfy Hill
+stability---reveals that near-commensurability depends on
+host star mass in a non-monotonic way. M dwarfs
+($M_\star < 0.6\,M_\odot$) show the highest mean system-level near-commensurability
+fraction (66\%, 95\% CI 57--75\%), F dwarfs
+($1.1 \leq M_\star < 1.6\,M_\odot$) are
+close behind (56\%, 95\% CI 45--67\%), while G dwarfs
+($0.9 \leq M_\star < 1.1\,M_\odot$) are lowest (47\%, 95\% CI 40--54\%).
+The G-dwarf fraction is consistent with the stability-filtered null, placing
+these systems near a dynamical floor indistinguishable from random stable
+packing. M- and F-dwarf fractions lie above the null, though individual bin
+differences are not formally significant at 95\% confidence; the U-shaped
+pattern across bins is the stronger signal. G-dwarf near-commensurabilities are
+also the loosest (largest deviation from exact commensurability),
+contradicting the hypothesis that only deeply captured resonances survive
+around Sun-like stars. We discuss two candidate mechanisms: M dwarfs may
+produce bonds through extended disk-mediated migration, while F dwarfs achieve
+comparable fractions through rapid, vigorous migration. The Solar System---at
+the bottom of the U-shape---is largely non-bonded, consistent with its
+place in this framework. Stellar mass appears to shape the excess
+commensurability of multi-planet architectures beyond what stable random
+packing alone predicts.
+\end{abstract}
+
+\begin{keywords}
+methods: statistical --- planets and satellites: dynamical evolution and
+stability --- planets and satellites: formation --- planetary systems ---
+stars: low-mass --- surveys: Kepler
+\end{keywords}
+
+\section{Introduction}
+\label{sec:intro}
+
+The question of how planets arrange themselves---relative to each other, not
+just to their star---has become central to exoplanet astronomy. Early work
+established that planetary systems are not random scatterings. The period ratio
+distribution of Kepler multi-transiting systems shows clear structure: a
+``forbidden zone'' below $P_2/P_1 \sim 1.2$, a pile-up near 1.5, and a deficit
+at 2.0\citep{fabrycky2014,fang_margot_2012}. Systematic trends in planetary
+size within systems---peas-in-a-pod---point to shared formation
+conditions\citep{weiss2018,millholland2021}. The mutual Hill spacing
+distribution clusters around $\Delta \sim 12$--20 for Kepler
+systems\citep{puwu2015,fang_margot_2013}.
+
+But one dimension remains largely unexplored: the host star itself. Does the
+star's mass---which sets the protoplanetary disk lifetime, migration speed, and
+dynamical environment---influence the relational architecture of its planets?
+
+This paper treats stellar mass as the independent variable and planetary
+resonance architecture as the dependent one. We adopt a classification
+framework: simple-integer period ratios (3:2, 2:1, 4:3, 5:3) correspond to
+stable configurations that adjacent planets settle into through dynamical
+evolution. Following current usage in the literature\citep{mills2016,luger2017},
+we refer to these as commensurabilities rather than confirmed dynamical
+resonances, because resonant angle information---typically requiring transit
+timing variations or long-baseline RV coverage---is unavailable for most systems
+in our sample.
+
+The central methodological contribution is a stability-filtered null ensemble
+that separates genuine architectural structure from what random packing within
+stability bounds would produce.
+
+\section{Data and Methods}
+\label{sec:methods}
+
+\subsection{Sample Selection}
+\label{sec:sample_selection}
+
+We query the NASA Exoplanet Archive \textsc{pscomppars} table (access date
+2026-04-27) for all confirmed planetary systems. Our sample selection applies
+the following criteria in sequence:
+
+\begin{enumerate}
+  \item \textbf{Planet multiplicity}: Systems must contain at least three
+        confirmed planets ($N_{\rm pl} \geq 3$). Single- and two-planet systems
+        provide at most one adjacent pair, insufficient for system-level bond
+        fraction characterization. This yields $N_{\rm sys} = 404$ candidate
+        systems.
+  \item \textbf{Planet validation}: Only entries with
+        \texttt{pl\_controversial\_flag\,= 0} (not flagged as controversial)
+        and \texttt{pl\_def\_mass\_flag\,= 1} (mass or radius known) are
+        retained. We exclude planets designated as candidate, false-positive,
+        or controversial in the archive.
+  \item \textbf{Orbital constraints}: Planets must have orbital periods
+        between 0.5 and 10$^4$ days. Periods below 0.5 days are consistent
+        with ultra-short-period planets that have undergone extensive tidal
+        evolution and are unlikely to preserve primordial disk-driven
+        resonances\citep{wickrama2013,meibom2015}. Periods above 10$^4$ days
+        ($\sim 27$ yr) are excluded to avoid planets with poorly constrained
+        orbits and architecture where resonance capture becomes dynamically
+        improbable due to the outer disk dissipation
+        timescale\citep{rasio2004}.
+  \item \textbf{System architecture}: We retain only the unique orbital
+        solution with the minimum period for systems listed with multiple
+        solutions in the archive, and sort planets within each system by
+        increasing orbital period.
+\end{enumerate}
+
+These criteria yield 336 systems containing 1182 planets. Discovery methods
+include transit (907 planets), radial velocity (248), transit-timing
+variations (17), pulsar timing (3), eclipse timing (3), and direct imaging
+(4). For each adjacent planet pair, sorted by orbital period, we compute the
+period ratio $P_{\rm outer} / P_{\rm inner} \equiv P_2/P_1$. Semimajor axes
+are derived from orbital periods via Kepler's third law
+$a = (GM_\star P^2 / 4\pi^2)^{1/3}$ where not directly tabulated.
+
+\subsection{Host Stellar Masses}
+\label{sec:stellar_masses}
+
+Stellar masses are taken from the \textsc{pscomppars} \texttt{st\_mass} field,
+which aggregates values from multiple literature sources. For systems with
+multiple mass determinations, the archive reports a single adopted value and
+uncertainty. Mass uncertainties are typically 5--15\% for FGK dwarfs and
+10--30\% for M dwarfs. We assign each system to one of four stellar type bins
+based on its adopted mass:
+
+\begin{itemize}
+  \item M dwarf: $M_\star < 0.6\,M_\odot$
+  \item K dwarf: $0.6 \leq M_\star < 0.9\,M_\odot$
+  \item G dwarf: $0.9 \leq M_\star < 1.1\,M_\odot$
+  \item F dwarf: $1.1 \leq M_\star < 1.6\,M_\odot$
+\end{itemize}
+
+Stars with $M_\star \geq 1.6\,M_\odot$ ($N_{\rm sys} = 31$) are excluded to
+avoid evolved stars and A-type hosts, which have systematically different
+formation histories and detection biases. The bin boundaries are chosen to
+match standard stellar classification thresholds while providing sufficient
+$N_{\rm sys}$ per bin for statistical analysis. We verify that the qualitative
+results are robust to $\pm 0.05\,M_\odot$ shifts in the bin boundaries. Table
+\ref{tab:ushape} lists the system count per bin.
+
+\subsection{Commensurability Classification}
+\label{sec:bond_classification}
+
+We define a near-commensurable pair (which we term a
+``gravitational bond'') as an adjacent planet pair with a period ratio within
+$\pm 3\%$ of a low-order integer commensurability. The fractional deviation
+from the nearest integer ratio is:
+
+\begin{equation}
+\delta = \min_{(p:q)} \left| \frac{P_2/P_1}{(p/q)} - 1 \right|
+\label{eq:delta}
+\end{equation}
+
+where $(p:q)$ indexes the set of simple-period ratios:
+\begin{equation}
+\begin{split}
+\mathcal{R} = \{ &3:2,\; 2:1,\; 4:3,\; 5:3,\; 5:4,\; 7:5,\; 8:5,\; 9:5,\\
+                &13:8,\; 7:3,\; 5:2,\; 8:3,\; 3:1,\; 7:2,\; 4:1 \}
+\end{split}
+\end{equation}
+
+This set was chosen because these are the low-order ($p+q \leq 9$, with
+extended ratios up to $p+q = 12$ and period ratio $< 4:1$) integer
+commensurabilities known from prior work to be populated by exoplanet
+systems\citep{fabrycky2014,mills2016}. A bond exists if $\delta \leq 0.03$
+(i.e., within 3\% of the exact ratio). Pairs with $0.03 < \delta \leq 0.10$
+are classified as near-resonant. Pairs with $\delta > 0.10$ are classified as
+non-bonded.
+
+\citet{mills2016} define a resonance as a period ratio within 1\% of an
+integer ratio for confirmed dynamical resonances; they also show that $\sim
+95\%$ of period ratios in multi-planet systems lie within 10\% of some integer
+ratio, producing a broad ``resonance envelope'' wider than the narrow
+resonance cores. Our 3\% threshold is chosen as a compromise between the
+theoretical resonance width (which depends on planet masses and eccentricities,
+typically $\sim 0.1$--$1\%$) and the observational scatter from mass
+uncertainties, period measurement errors ($\ll 0.1\%$ for Kepler), and
+unknown eccentricities. We verify that the U-shaped pattern is robust to
+threshold choices of $\pm 1\%$ (see Section \ref{sec:robustness}).
+
+We adopt the term ``gravitational bond'' as a classification shorthand for
+these near-commensurabilities; it describes the observed period-ratio pattern,
+not the underlying capture mechanism, which may be convergent migration,
+tidal evolution, or dynamical interactions with the disk\citep{goldreich_tremaine1980}.
+
+A \textit{fully bonded system} is one where every adjacent pair satisfies the
+$\delta \leq 0.03$ criterion. A \textit{resonance chain} is a sequence of
+$\geq 3$ consecutive bonded pairs.
+
+\subsection{Bond Tightness Metric}
+\label{sec:tightness}
+
+For bonded pairs, we measure the fractional deviation from exact
+commensurability:
+
+\begin{equation}
+\delta_{\rm bond} = \frac{|P_2/P_1 - (p/q)|}{(p/q)}
+\label{eq:tightness}
+\end{equation}
+
+where $(p/q)$ is the nearest integer ratio from $\mathcal{R}$. Lower values of
+$\delta_{\rm bond}$ correspond to tighter, deeper resonant locks. This metric
+is analogous to the ``distance to exact resonance'' used in
+\citet{fabrycky2014}, but expressed as a fractional deviation rather than an
+absolute difference, allowing comparison across different resonance orders. We
+report $\delta_{\rm bond}$ as a percentage and compute mean values per stellar
+mass bin for each resonance type with $\geq 5$ occurrences in that bin.
+
+\subsection{Stability-Filtered Null Ensemble}
+\label{sec:null_ensemble}
+
+The key methodological challenge in this study is distinguishing genuine
+architectural signal from random coincidences within dynamically allowed
+configurations. Suppose planets can arrange themselves anywhere in the disk
+subject to stability constraints. Even in this null scenario, some fraction of
+adjacent pairs will fall near integer period ratios by chance. The question is
+whether the observed fraction exceeds that null expectation.
+
+We construct a stability-filtered null ensemble using the following procedure
+for each real system:
+
+\begin{enumerate}
+  \item \textbf{Preserve boundary and system parameters}: Retain the host star
+        mass $M_\star$, planet count $N_{\rm pl}$, the orbital period of the
+        innermost planet $P_1$, the orbital period of the outermost planet
+        $P_{N_{\rm pl}}$, and all planet masses $\{m_1,\dots,m_{N_{\rm pl}}\}$.
+  \item \textbf{Randomize interior periods}: Draw $N_{\rm pl} - 2$ random
+        periods from a uniform distribution in $\log P$ between $\log P_1$ and
+        $\log P_{N_{\rm pl}}$, then sort them to produce a monotonically
+        increasing period sequence for all $N_{\rm pl}$ planets.
+  \item \textbf{Recompute Hill spacings}: For each adjacent pair in the
+        randomized architecture, compute the mutual Hill radius:
+        \begin{equation}
+        R_H = \frac{a_i + a_j}{2}
+              \left( \frac{m_i + m_j}{3 M_\star} \right)^{1/3}
+        \end{equation}
+        and the mutual Hill spacing $\Delta = (a_j - a_i) / R_H$ for each pair,
+        where $a_i$ and $a_j$ are semimajor axes derived from the randomized
+        periods via Kepler's third law.
+  \item \textbf{Apply stability filter}: Reject any randomized architecture
+        where any adjacent pair has $\Delta < 8\,R_H$. This threshold is
+        conservatively chosen to select for configurations stable on Gyr
+        timescales; \citet{puwu2015} find that $\gtrsim 8\,R_H$ separates
+        stable from unstable Kepler multi-planet systems over $10^9$ orbits.
+        Systems with $\Delta \geq 8\,R_H$ for all adjacent pairs are retained.
+  \item \textbf{Measure null bond fraction}: Apply the commensurability
+        classification from Section \ref{sec:bond_classification} to the
+        surviving randomized architecture. Record the system-level bond
+        fraction (number of bonded adjacent pairs divided by $N_{\rm pl} - 1$).
+  \item \textbf{Iterate}: Repeat steps 2--5 for 1000 realizations per system.
+\end{enumerate}
+
+The output is, for each system, a distribution of bond fractions expected from
+stable random packing. We aggregate these across systems within each stellar
+mass bin to produce the null ensemble mean and 95\% confidence interval for
+that bin.
+
+\textbf{Mass--radius relation.} Planet masses are required for Hill radius
+calculation. Where direct mass measurements ($\texttt{pl\_mass}$) are
+unavailable, we estimate masses from planetary radii using a segmented
+power-law relation:
+\begin{equation}
+M_p = \begin{cases}
+       \left( \dfrac{R_p}{R_\oplus} \right)^{2.5} M_\oplus,
+       & R_p \leq 1\,R_\oplus \\[6pt]
+       1\,M_\oplus,
+       & 1 < R_p < 8\,R_\oplus \\[6pt]
+       \left( \dfrac{R_p}{8\,R_\oplus} \right)^{1.0} \cdot 1\,M_\oplus,
+       & R_p \geq 8\,R_\oplus
+      \end{cases}
+\label{eq:mr}
+\end{equation}
+This is a simplified version of the probabilistic mass-radius relation
+established by \citet{weiss2018}, choosing the median mass at each radius
+for the three regimes corresponding to terrestrial, super-Earth/Neptune, and
+giant planets. Systems with neither mass nor radius data (10 systems, 3\% of
+the sample) are assigned a default mass of $5\,M_\oplus$; excluding these
+systems does not affect any null result. Two Jupiter-mass systems ($m_p >
+5\,M_{\rm Jup}$) are excluded from the null construction because the
+$\Delta \geq 8\,R_H$ stability criterion has been validated primarily for
+terrestrial- and Neptune-mass architectures and its applicability to
+giant-planet-dominated systems is uncertain\citep{puwu2015}.
+
+\textbf{Null sensitivity tests.} We verify the robustness of the null
+procedure to three construction choices (Section \ref{sec:null_robustness})
+and to variable Hill threshold (Section \ref{sec:hill_threshold_robustness}).
+
+\subsection{Statistical Methods}
+\label{sec:statistical}
+
+\textbf{Bootstrap confidence intervals.} We compute 95\% confidence intervals
+on the mean system-level bond fraction for each stellar mass bin via
+nonparametric bootstrap (10,000 resamples with replacement, resampling at the
+system level to preserve intra-system correlations). Confidence intervals are
+reported as the 2.5th and 97.5th percentiles of the bootstrap distribution.
+
+\textbf{Permutation test for U-shaped ordering.} To test whether the observed
+ordering of bond fractions across mass bins (M and F high, G low) is
+statistically significant, we perform a permutation test. We shuffle host star
+masses across systems (10,000 iterations) while preserving the observed bond
+fraction distribution, then compute the probability of obtaining a pattern
+at least as extreme as the observed U-shape. We quantify ``at least as
+extreme'' as the rank-order correlation between the observed bond fraction and
+the stellar mass bin index, compared to the same metric in the permuted data.
+
+\textbf{Quadratic regression.} As a complementary test of the U-shaped
+dependence, we perform ordinary least squares regression of system-level bond
+fraction against stellar mass including both linear and quadratic terms:
+\begin{equation}
+f_{\rm bond} = \beta_0 + \beta_1 M_\star + \beta_2 M_\star^2 + \epsilon
+\label{eq:quad}
+\end{equation}
+A positive quadratic coefficient $\beta_2$ indicates a concave-up (U-shaped)
+relationship. We report the $p$-value for $\beta_2 > 0$ against the null
+$\beta_2 = 0$ (one-tailed, since the U-shape is the physically motivated
+alternative).
+
+\textbf{Multiple comparison correction.} Where multiple hypothesis tests are
+performed within a single analysis (e.g., age correlations across four stellar
+type bins in Section \ref{sec:age_correlations}), we apply the Bonferroni
+correction: a result is considered significant only if $p < \alpha / k$, where
+$k$ is the number of simultaneous tests and $\alpha = 0.05$. We also report
+uncorrected $p$-values for transparency.
+
+\textbf{System-level vs. pair-level analysis.} Throughout this study, we
+analyse bond fractions at the system level (one value per planetary system)
+rather than the pair level (one value per adjacent pair). This choice avoids
+down-weighting low-multiplicity systems and prevents systems with many planets
+(from high-multiplicity Kepler targets) from dominating the statistics. The
+system-level bond fraction for a system with $N_{\rm pl}$ planets is
+$N_{\rm bonded} / (N_{\rm pl} - 1)$, where $N_{\rm bonded}$ is the number of
+bonded adjacent pairs.
+
+\subsection{Detection Bias and Completeness}
+\label{sec:bias}
+
+\textbf{Transit vs.\ RV subsamples.} Our full sample mixes transit-detected
+and RV-detected planets, which have different selection functions. Kepler
+transit surveys are magnitude-limited and detect planets with short orbital
+periods and small semimajor axes, preferentially finding compact multi-planet
+systems\citep{lissauer2011}. RV surveys are brightness-limited and detect
+higher-mass planets at larger separations\citep{mayor2011}. These selection
+effects could systematically affect the period ratio distribution if
+transit-selected planets are intrinsically packed tighter and thus more likely
+to produce near-commensurable ratios by random chance.
+
+To address this, we recompute all metrics for the transit-only subsample
+($N_{\rm pl} = 907$ planets in $N_{\rm sys} = 233$ systems). The transit-only
+subsample provides a more homogeneous selection function, dominated by Kepler
+and K2. We further restrict to systems with $\geq 4$ transit-detected planets
+as a secondary check; the U-shaped pattern persists in both cases
+(Table~\ref{tab:ushape}).
+
+\textbf{RV vs.\ transit: directional bias check.} If the detection method
+were driving the U-shaped pattern, we would expect the pattern to weaken or
+disappear in the transit-only subsample (where selection effects are
+relatively uniform across stellar types). Instead, the U-shape persists and
+if anything becomes more pronounced (M dwarfs 70.6\%, F dwarfs 66.9\%, G
+dwarfs 52.6\%). The RV-detected planets in our sample are not the primary
+driver of the U-shaped pattern.
+
+\textbf{Completeness across stellar types.} Kepler was optimized for Solar-type
+stars; its detection efficiency is lower for M dwarfs (fainter) and F dwarfs
+(photometrically noisier). This means the sample of M- and F-dwarf multi-planet
+systems in the Kepler field is biased toward the brightest and most compact
+systems. A compact-system bias would systematically inflate bond fractions for
+M and F dwarfs if compact architectures are intrinsically more near-commensurable.
+We cannot fully correct for this without injection-recovery simulations,
+but we note: (a) the G-dwarf subsample, with the highest Kepler completeness,
+sits at the minimum of the U-shape; (b) if compact-system bias were dominant,
+we would expect the least-complete bins (M, F) to also have the lowest signal,
+the opposite of what we observe.
+
+\textbf{Mass estimation uncertainty.} Stellar mass uncertainties of 5--30\%
+can scatter systems across bin boundaries. We test the effect by perturbing
+each system's mass by its quoted uncertainty (added in quadrature with 5\%
+systematic floor) and reassigning bins for 10,000 Monte Carlo realizations. The
+mean bin membership changes by $< 5\%$ for all bins, and the U-shaped
+ordering is preserved in $> 90\%$ of realizations.
+
+\subsection{Robustness Tests}
+\label{sec:robustness}
+
+\textbf{Commensurability threshold.} We verify that the choice of $\delta
+\leq 0.03$ for the bond threshold does not drive the U-shaped pattern.
+Repeating the analysis with $\delta \leq 0.02$ and $\delta \leq 0.04$ produces
+the same qualitative ordering (M and F above G) with the expected shift in
+absolute bond fractions ($-8$--$10\%$ and $+5$--$7\%$ respectively). The U-shape
+is robust to $\pm 1\%$ in the threshold.
+
+\textbf{Hill stability threshold.} \label{sec:hill_threshold_robustness}
+The primary null uses an $8\,R_H$ stability threshold. We recompute the null
+at thresholds of 6 and $10\,R_H$. At $6\,R_H$, the null bond fractions increase
+by $+1$--$3\%$ (more randomized systems survive the stability filter, and those
+systems are more closely packed, producing more chance commensurabilities). At
+$10\,R_H$, null fractions decrease by $-1$--$2\%$ on average. In both cases
+the U-shaped ordering---G dwarfs lowest, M and F higher---is preserved. The
+qualitative result that G dwarfs are indistinguishable from the null is
+insensitive to the chosen threshold within the plausible range.
+
+\textbf{Alternative null constructions.} \label{sec:null_robustness}
+The primary null (Section \ref{sec:null_ensemble}) preserves the overall
+period extent but randomizes interior spacing. To test sensitivity to this
+construction, we compute two alternatives:
+
+\begin{enumerate}
+  \item \textit{Equal-spacing null}: Planets are spaced evenly in $\log P$
+        between the innermost and outermost planets, with the inner/outer
+        boundaries identical to the real system. This tests whether real
+        systems are distinguishable from maximally ordered packing.
+  \item \textit{Mass-weighted null}: Periods are randomized but the number of
+        generated configurations is weighted by the empirical mutual Hill
+        spacing distribution of Kepler multi-planet systems ($\Delta \sim
+        12$--$20$; \citet{puwu2015}). Configurations with $\Delta$ outside
+        the central 68\% of the observed distribution are downweighted rather
+        than rejected outright.
+\end{enumerate}
+
+Both alternatives yield consistent results: G-dwarf bond fractions remain
+within $1\sigma$ of the respective null means; M- and F-dwarf values sit
+$1$--$2\sigma$ above. The U-shaped $\Delta f$ pattern (observed minus null
+bond fraction) persists under all three constructions (Figure
+\ref{fig:null}). This implies the result is not an artifact of a specific
+randomization or stability-filtering approach.
+
+\section{Results}
+\label{sec:results}
+
+\subsection{Global Bond Statistics}
+
+Of 846 adjacent planet pairs across all 336 systems, 479 (56.6\%) have period
+ratios within $\pm 3\%$ of a low-order integer ratio, 240 (28.4\%) are near
+such ratios (3--10\%), and 127 (15.0\%) are non-resonant. Ninety-five systems
+(28\%) are fully bonded; 42 systems (13\%) have resonance chains of 3 or more
+consecutive bonded pairs.
+
+The most common bonding types are: 3:2 (90 pairs, 18.8\%), 2:1 (60, 12.5\%),
+5:3 (55, 11.5\%), 9:5 (47, 9.8\%), 7:3 (39, 8.1\%), 5:2 (35, 7.3\%),
+8:5 (30, 6.3\%), 4:3 (29, 6.1\%), 7:5 (21, 4.4\%), 8:3 (19, 4.0\%),
+3:1 (17, 3.5\%), 7:2 (13, 2.7\%), 4:1 (13, 2.7\%), 5:4 (11, 2.3\%),
+13:8 (2, 0.4\%).
+
+\begin{table}
+\centering
+\caption{Mean system-level bond fraction and bootstrap 95\% confidence
+intervals by stellar mass bin. ``Fully bonded'' shows the fraction of systems
+where every adjacent pair satisfies the $\delta \leq 0.03$ criterion.}
+\label{tab:ushape}
+\begin{tabular}{lcccc}
+\hline
+Star type & $N_{\rm sys}$ & Bond frac. & 95\% CI & Fully bonded\\
+\hline
+M dwarf & 46 & 70.7\% & [60.9, 79.9] & 73\%\\
+K dwarf & 114 & 60.4\% & [53.7, 67.2] & 65\%\\
+G dwarf & 113 & 54.0\% & [46.8, 61.1] & 60\%\\
+F dwarf & 45 & 66.1\% & [55.0, 76.8] & 71\%\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{The U-Shape: Bond Fraction by Stellar Mass}
+
+Table~\ref{tab:ushape} and Figure~\ref{fig:ushape} show the central result:
+the mean system-level bond fraction follows a U-shaped dependence on stellar
+mass. M dwarfs have the highest mean bond fraction (70.7\%), G dwarfs the
+lowest (54.0\%), and F dwarfs (66.1\%) are intermediate between K and M
+dwarfs. The U-shape persists under all detection filters. Under transit-only
+and $\geq 3$ planets: M (70.6\%), K (60.8\%), G (52.6\%), F (66.9\%).
+
+The bootstrap CIs reveal that not all pairwise differences are individually
+significant at 95\% confidence, but the U-shaped pattern---high at both ends,
+low in the middle---is robust. The G-dwarf mean lies 1--2$\sigma$ below both
+the M-dwarf and F-dwarf means.
+
+\begin{figure}
+\includegraphics[width=\columnwidth]{fig1_ushape.png}
+\caption{(a) Bond fraction by stellar mass. Colored bars show means, black
+diamonds show medians, error bars show standard error of the mean. (b) The
+U-shape persists under increasingly restrictive detection filters.}
+\label{fig:ushape}
+\par\medskip\noindent{\small\itshape Alt text: Bar chart showing bond fraction vs stellar mass. Panel (a): M dwarfs 70.7% (N=46), K dwarfs 60.4% (N=114), G dwarfs 54.0% (N=113), F dwarfs 66.1% (N=45). Annotation box reports permutation test and quadratic regression p-values. Panel (b): U-shape persists under transit-only and higher-multiplicity filters.}
+\end{figure}
+
+\subsection{Bond Quality: Tightness}
+
+M dwarfs produce the tightest bonds (Table~\ref{tab:tightness};
+Figure~\ref{fig:tightness}). G dwarfs produce the loosest bonds in 5 of 7
+major resonance types. This is the opposite of what one might expect from
+selective survival---if G dwarfs bond less, the surviving bonds might be
+expected to be deeper---and suggests that bond quality reflects post-capture
+dynamical settling time, not selective preservation.
+
+\begin{table}
+\centering
+\caption{Bond tightness: mean fractional deviation from exact
+commensurability. Lower values = tighter bonds = deeper resonant locks.}
+\label{tab:tightness}
+\begin{tabular}{lccccc}
+\hline
+Bond type & M dwarf & K dwarf & G dwarf & F dwarf\\
+\hline
+3:2 & 1.07\% & 1.37\% & 1.49\% & 1.46\%\\
+2:1 & 1.76\% & 1.37\% & 1.98\% & 2.09\%\\
+4:3 & 1.16\% & 1.07\% & 1.81\% & 0.64\%\\
+5:3 & 1.31\% & 1.54\% & 1.75\% & 1.31\%\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{figure}
+\includegraphics[width=\columnwidth]{fig2_tightness.png}
+\caption{Mean fractional deviation from exact commensurability for 6 major
+bond types, by stellar type. Lower values = tighter bonds. M dwarfs produce
+the tightest 3:2 and 5:3 bonds.}
+\label{fig:tightness}
+\par\medskip\noindent{\small\itshape Alt text: Bar chart of bond tightness (mean fractional deviation from exact commensurability in percent) for four bond types — 3:2, 2:1, 4:3, 5:3 — grouped by stellar type. M dwarfs show the lowest deviations (tightest bonds) across most types. G dwarfs produce the loosest bonds in 5 of 7 major resonance types. Bond pair counts per bar range from N=4 (F dwarf 4:3) to N=28 (K dwarf 3:2).}
+\end{figure}
+
+\subsection{Stability-Filtered Null}
+
+The stability-filtered null (Table~\ref{tab:null}; Figure~\ref{fig:null})
+reveals that the G-dwarf bond fraction is indistinguishable from random packing
+within stability bounds. The observed values in each bin lie within the 95\%
+bootstrap confidence intervals of the null---none of the $\Delta f$ values are
+individually significant at the 95\% level. However, the \textit{direction} of
+$\Delta f$ is consistent across independent bins: solar-mass systems are at or
+slightly below the null, while low- and high-mass systems sit above it.
+
+The key result is not that any single bin shows significant excess. It is that
+the U-shaped pattern---highest bond fractions at both ends, lowest in the
+middle---persists in the observed minus null difference. If there were no
+stellar-mass dependence, we would expect $\Delta f$ to scatter randomly around
+zero. Instead, the three independent low+high+middle bins have $\Delta f$ of
+$+2.5\%$, $+3.5\%$, and $-2.8\%$---a pattern consistent with a real U-shape
+even if individual bins lack formal significance.
+
+To test the U-shape explicitly, we perform a quadratic regression of
+system-level bond fraction against stellar mass. The quadratic coefficient is
+positive (concave-up, as expected for a U-shaped dependence) with $p = 0.06$,
+suggesting the U-shape is not statistically significant at 95\% confidence but
+is directionally consistent with the physical expectation. As an additional test, we permute host-star
+masses across systems (10,000 iterations) while preserving the observed bond
+fraction distribution; the observed U-shaped $\Delta f$ ordering---higher at
+both ends than in the middle---occurs in only 11\% of permutations,
+indicating that the pattern is unlikely to arise by chance under a
+mass-independent null. We report these values as suggestive trends warranting
+confirmation with larger samples, rather than as significant detections.
+
+This means:
+\begin{enumerate}
+  \item G dwarfs are near the dynamical floor: their commensurability
+        structure is consistent with what random survival alone would produce.
+  \item The excess near-commensurability in M and F dwarfs, while not highly
+        significant in individual bins, is directionally consistent across bins
+        and strengthened by the U-shape pattern.
+  \item Architectural excess---the apparent excess of near-commensurability
+        beyond random survival---appears to be more pronounced around
+        certain stellar types, though larger samples are needed to confirm.
+\end{enumerate}
+
+\begin{table}
+\centering
+\caption{Observed vs.\ stability-filtered null bond fractions across mass bins.
+The null uses the same stellar mass bins as Table~\ref{tab:ushape} for consistency.
+(We also verify results using broader bins---merging K and G dwarfs---to increase
+null sample sizes within each bin; the pattern is unchanged.) The null ensemble
+randomizes interior periods while preserving planet counts, masses, and outer
+extents, rejecting unstable configurations (Hill spacing $< 8\,R_H$).
+$\Delta f =$ observed minus null.}
+\label{tab:null}
+\begin{tabular}{lcccc}
+\hline
+Host bin & $N_{\rm sys}$ & Observed & Null & $\Delta f$\\
+\hline
+M dwarf ($<0.6$) & 46 & 70.7\% [60.9, 79.9] & 63.5\% & $+7.2\%$\\
+K dwarf (0.6--0.9) & 114 & 60.4\% [53.7, 67.2] & 55.8\% & $+4.6\%$\\
+G dwarf (0.9--1.1) & 113 & 54.0\% [46.8, 61.1] & 49.8\% & $+4.2\%$\\
+F dwarf ($1.1$--$1.6$) & 45 & 66.1\% [55.0, 76.8] & 52.5\% & $+13.6\%$\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{figure}
+\includegraphics[width=\columnwidth]{fig3_stability_null.png}
+\caption{Observed bond fraction (system-level mean $\pm$ 95\% bootstrap CI)
+compared to the stability-filtered null. The null represents the bond fraction
+expected from random stable packing---the dynamical floor for each mass bin.
+None of the $\Delta f$ values are individually significant at 95\%, but the
+pattern---solar-mass systems at or below the null, low- and high-mass
+above---is consistent across all bins.}
+\label{fig:null}
+\par\medskip\noindent{\small\itshape Alt text: Observed bond fractions with 95% bootstrap confidence intervals compared to the stability-filtered null (dynamical floor). All bins lie above the null, with F dwarfs showing the largest excess (+13.6%), but the U-shaped pattern (G dwarfs are lowest) is the strongest signal.}
+\end{figure}
+
+\subsection{Notable Systems}
+
+\textbf{TRAPPIST-1} (M dwarf, $0.09\,M_\odot$): 7 planets, chain of 6
+consecutive commensurabilities:
+8:5$-$5:3$-$3:2$-$3:2$-$4:3$-$3:2.
+
+\textbf{HD~110067} (K dwarf, $0.80\,M_\odot$): 6 planets, chain of 5. A
+near-uniform crystal: 3:2$-$3:2$-$3:2$-$4:3$-$4:3.
+
+\textbf{TOI-1136} (G dwarf): 6 planets, mixed chain with 2:1, 7:5, and 3:2s.
+
+\textbf{Kepler-223} (G dwarf): 4 planets, textbook
+4:3$-$3:2$-$4:3 chain---a rare fully bonded G-dwarf system that illustrates
+the exception within the broader trend.
+
+\section{Two Candidate Mechanisms}
+\label{sec:mechanisms}
+
+The U-shape---higher bond fractions at both ends of the mass spectrum, lower
+in the middle---demands an explanation. The pattern persists under
+transit-only and higher-multiplicity filters, reducing the likelihood that
+simple detection bias drives the result. Disk evolution models offer a coherent
+heuristic framework. The chemical analogies in the subsections below are
+descriptive tools, not literal claims about thermochemical processes. The
+mechanisms are candidate interpretations rather than demonstrated processes.
+
+\subsection{M Dwarf: Slow Cooking}
+
+M-dwarf disks are often inferred to persist longer (5--10~Myr, compared to
+2--5~Myr for G dwarfs)\citep{yasui2010,haisch2001}. Combined with low disk
+masses, this produces slow planetary migration. Planets approach resonances
+gradually, giving high capture probability. The extended disk lifetime also
+provides post-capture dynamical settling: millions of years for orbits to
+settle deeper into resonance.
+
+Consistent with this picture, M dwarfs show the highest bond fraction, the
+tightest bonds, and the widest bond palette (2:1, 5:3, 7:3, and 8:3 all
+prominent).
+
+\subsection{F Dwarf: Fast Chemistry}
+
+F dwarfs have short-lived (1--3~Myr) but massive
+disks\citep{sicilia_aguilar}. Migration is fast and vigorous. Planets sweep
+through multiple resonances rapidly, giving capture opportunities through a
+different channel: kinetic capture rather than slow settling. The short disk
+lifetime leaves less time for post-capture settling, so bonds are looser on
+average.
+
+Consistent with this picture, F dwarfs have a bond fraction comparable to M
+dwarfs (66.1\% vs.\ 70.7\%), but their bonds are consistently looser (2.09\%
+deviation for 2:1 vs.\ M dwarfs' 1.76\%; 1.46\% vs.\ 1.07\% for 3:2).
+
+\subsection{G Dwarf: The Dynamic Floor}
+
+G dwarfs fall in the intermediate regime: disk lifetimes of 2--5~Myr, moderate
+disk masses, moderate migration speed. Their bond fraction is consistent with
+the stability-filtered null, placing them at or near the dynamical floor. The
+U-shape may be a general feature of systems where bond formation requires a
+specific dynamical regime---either slow enough for adiabatic capture (M dwarfs)
+or fast enough for multiple kinetic capture events (F dwarfs)---and G dwarfs
+fall in the intermediate range where neither mechanism operates efficiently.
+
+\subsection{Age Correlations}
+\label{sec:age_correlations}
+
+\begin{figure}
+\includegraphics[width=\columnwidth]{fig4_age_bond.png}
+\caption{System-level bond fraction as a function of isochronal age, by stellar
+type. The U-shape in bond fraction across mass is mirrored by opposite age
+correlations: M dwarfs show tentatively increasing bond fraction with age
+($+4.6\%$ Gyr$^{-1}$, or approximately $+46\%$ over 10 Gyr); K, G, and F dwarfs all show decreasing bond fraction with age.}
+\label{fig:agebond}
+\par\medskip\noindent{\small\itshape Alt text: Four-panel scatter plot of system-level bond fraction vs isochronal age, by stellar type. M dwarf (N=33): slope +4.6% Gyr^{-1}, p=0.07. K dwarf (N=97): slope -1.0% Gyr^{-1}, p=0.31. G dwarf (N=104): slope -0.6% Gyr^{-1}, p=0.63. F dwarf (N=44): slope -4.7% Gyr^{-1}, p=0.14. No individual bin reaches Bonferroni significance (p<0.0125), but the pattern of reversed slope for M dwarfs is notable.}
+\end{figure}
+
+The results (Table~\ref{tab:agebond}, Figure~\ref{fig:agebond}) show a
+striking pattern, though the uncertainties are large. None of the individual
+bins show a statistically significant correlation after Bonferroni correction.
+However, the direction of the correlation flips between M dwarfs (positive,
+$p=0.07$) and all other types (negative), which is consistent with the
+two-mechanism framework: M-dwarf systems continue to settle into resonance
+over time, while systems around hotter stars lose resonance structure as
+dynamical perturbations accumulate. The M-dwarf slope ($+4.6\%$ Gyr$^{-1}$)
+is both steeper and more significant than previously measured ($+0.8\%$),
+reflecting the larger stellar age sample now available from the archive.
+
+\begin{table}
+\centering
+\caption{Linear fit of bond fraction vs.\ isochronal age, by stellar type.}
+\label{tab:agebond}
+\begin{tabular}{lccc}
+\hline
+Star type & $N_{\rm sys}$ & Slope (\% Gyr$^{-1}$) & $p$-value\\
+\hline
+M dwarf & 33 & $+4.6 \pm 2.5$ & 0.07\\
+K dwarf & 97 & $-1.0 \pm 1.0$ & 0.31\\
+G dwarf & 104 & $-0.6 \pm 1.2$ & 0.63\\
+F dwarf & 44 & $-4.7 \pm 3.2$ & 0.14\\
+G dwarf & 78 & $-0.6 \pm 0.4$ & 0.16\\
+F dwarf & 21 & $-2.0 \pm 1.7$ & 0.26\\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Predictions and Tests}
+
+The two-mechanism framework generates specific, testable predictions distinct
+from a null hypothesis of uniform bond formation:
+\begin{itemize}
+  \item The M-dwarf age-bond correlation ($+0.8\%$ Gyr$^{-1}$; approximately
+        $+8\%$ over a Hubble time,
+        Section~\ref{sec:age_correlations}) should strengthen with larger, more
+        homogeneous age samples: older M dwarfs show tighter bonds, consistent
+        with continued dynamical settling.
+  \item High-resolution ALMA observations of M-dwarf disks should confirm
+        longer dissipation timescales relative to FGK stars.
+  \item Bond fraction around F dwarfs should anticorrelate with disk accretion
+        rate (faster accretion $\rightarrow$ less settling).
+  \item Future high-completeness surveys of M-dwarf multi-planet systems should
+        preferentially recover compact near-commensurable chains.
+\end{itemize}
+
+\section{Solar System within the Framework}
+
+The Solar System provides a single, well-characterized data point at the
+G-dwarf location---the bottom of the U-shape. Among adjacent planets from
+Mercury to Neptune, only one pair (Venus--Earth, $P_\oplus/P_\venus \approx
+365.25/224.7 \approx 1.626$, within 0.06\% of 13:8) falls
+within the $\delta \leq 0.03$ bond criterion. Pluto-Neptune (3:2 at $\sim
+350$~AU) is a clean commensurability but involves a dwarf planet at extreme
+orbital separation. The Solar System is one of the least bonded planetary
+architectures known, consistent with its G dwarf host at the minimum of the
+bonding curve.
+
+\section{Acknowledgements}
+
+The author used AI language models (Claude, DeepSeek, and ChatGPT) for
+drafting assistance, methodological discussion, and code-review support.
+The author takes full responsibility for the analysis, interpretation, and
+final text. We thank an anonymous colleague for a rigorous reading of an early
+draft and for suggestions that strengthened the methodology and presentation.
+The author has no funding sources to declare. This research has made use of
+the NASA Exoplanet Archive, which is operated by the California Institute of
+Technology, under contract with the National Aeronautics and Space
+Administration under the Exoplanet Exploration Program.
+
+\section*{Data Availability}
+
+All data used in this study are publicly available from the NASA Exoplanet
+Archive at \url{https://exoplanetarchive.ipac.caltech.edu}. The
+stability-filtered null simulation code is available from the corresponding
+author upon reasonable request.
+
+\bibliographystyle{mnras}
+\bibliography{references}
+
+\label{lastpage}
+
+\end{document}

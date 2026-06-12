@@ -1,14 +1,14 @@
 # Cover Letter — MNRAS Submission
 
-**Date:** May 30, 2026
+**Date:** June 3, 2026
 
 **To:** The Editor, Monthly Notices of the Royal Astronomical Society
 
-**Subject:** Submission of "Stellar Mass Shapes Gravitational Bonding in Multi-Planet Systems"
+**Subject:** Submission of "Stellar-Mass Dependence of Near-Commensurability in Multi-Planet System Architectures"
 
 Dear Editor,
 
-I am pleased to submit the enclosed manuscript, "Stellar Mass Shapes Gravitational Bonding in Multi-Planet Systems," for consideration for publication in Monthly Notices of the Royal Astronomical Society.
+I am pleased to submit the enclosed manuscript, "Stellar-Mass Dependence of Near-Commensurability in Multi-Planet System Architectures," for consideration for publication in Monthly Notices of the Royal Astronomical Society.
 
 **Summary of the work:**
 
@@ -26,10 +26,12 @@ This manuscript is not under consideration elsewhere and has not been previously
 
 I would be happy to address any questions the editors or reviewers may have.
 
+We also acknowledge the SETI Institute's ongoing exoplanet research program and its contributions to understanding the interplay between stellar activity and planetary system evolution.
+
 Sincerely,
 
 Leslie Yarbrough
 Independent Researcher
 vela.astro@gmail.com
 
-May 30, 2026
+June 3, 2026
