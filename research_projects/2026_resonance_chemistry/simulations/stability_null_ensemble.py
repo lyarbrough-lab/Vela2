@@ -35,7 +35,7 @@ from collections import defaultdict
 random.seed(42)
 
 # ── Config ──
-DATA_PATH   = '../data/multi_planet_systems.csv'   # relative to simulations/
+DATA_PATH   = 'multi_planet_systems.csv'   # same directory (copy of canonical data)
 N_DRAWS     = 500          # stable draws per system
 MIN_HILL    = 8            # minimum mutual Hill radii separation
 TOLERANCE   = 0.03         # within 3% of exact ratio = bonded
