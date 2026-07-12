@@ -60,9 +60,8 @@ system, and requires every included system to receive exactly 2000 draws.
 ## Versioning and archive
 
 The files under `canonical/` supersede the rejection-sampling outputs associated
-with the earlier repository release. A new GitHub release should be archived by
-Zenodo so that the corrected analysis receives a new version record while
-remaining part of the same project archive.
+with the earlier repository release. The corrected `v5.0.0` release is archived
+at Zenodo as [10.5281/zenodo.21326602](https://doi.org/10.5281/zenodo.21326602).
 
 ## License and citation
 
