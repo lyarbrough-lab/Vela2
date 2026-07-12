@@ -32,14 +32,16 @@ on the selected dynamical orders and vanishes for first-order ratios alone.
 
 | Path | Purpose |
 |---|---|
-| `canonical/data/multi_planet_systems.csv` | Frozen 2026-04-27 input catalog |
+| `../../datasets/exoplanets/multi_planet_systems.csv` | Frozen 2026-04-27 input catalog (repository-wide canonical dataset) |
 | `canonical/code/system_level_extension.py` | Exact conditional Dirichlet sampler and statistical tests |
 | `canonical/results/canonical_results.json` | Canonical summary output; seed 20260711 |
 | `canonical/results/canonical_systems.csv` | Per-system observed/null output |
 | `canonical/manuscript/main.tex` | AJ AASTeX manuscript source |
 | `canonical/manuscript/references.bib` | Verified bibliography |
 | `canonical/figures/make_figures.py` | Figure-generation code |
-| `canonical/figures/fig*.pdf` | Vector manuscript figures |
+
+Running `canonical/figures/make_figures.py` regenerates the manuscript's three
+vector PDF figures from the canonical outputs.
 
 ## Reproduction
 
@@ -47,10 +49,9 @@ From this directory:
 
 ```bash
 python canonical/code/system_level_extension.py \
-  --input canonical/data/multi_planet_systems.csv \
-  --output-json canonical/results/reproduced_results.json \
-  --output-systems canonical/results/reproduced_systems.csv \
-  --draws 2000 --min-hill 8 --seed 20260711
+  ../../datasets/exoplanets/multi_planet_systems.csv \
+  --output canonical/results/reproduced_results.json \
+  --draws 2000 --hill 8 --seed 20260711
 ```
 
 The canonical run uses NumPy PCG64 seed `20260711`, 2000 draws per feasible
