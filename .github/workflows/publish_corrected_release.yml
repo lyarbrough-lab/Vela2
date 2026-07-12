@@ -1,0 +1,49 @@
+name: Publish corrected Zenodo release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/publish_corrected_release.yml
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create v5.0.0 release if absent
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view v5.0.0 --repo "${{ github.repository }}" >/dev/null 2>&1; then
+            echo "Release v5.0.0 already exists; no action needed."
+            exit 0
+          fi
+          cat > release-notes.md <<'EOF'
+          Canonical corrected release for the planetary near-commensurability analysis.
+
+          This release replaces the earlier rejection-sampling outputs with an exact
+          conditional Dirichlet sampler and provides the canonical results used in the
+          AJ manuscript.
+
+          Key results:
+          - Broad 14-ratio G-host residual: −5.46 percentage points,
+            nominal 95% CI [−10.81, −0.15].
+          - First-order G-host residual: +0.09 points,
+            CI [−4.44, +4.69].
+          - Global quadratic host-mass tests are not significant.
+          - 300 systems are null-feasible; 26 null-infeasible systems are reported separately.
+
+          Canonical seed: 20260711.
+          Draws per feasible system: 2,000.
+
+          The earlier rejection-sampling outputs and associated strong U-shape/
+          “resonance chemistry” interpretation are superseded.
+          EOF
+          gh release create v5.0.0 \
+            --repo "${{ github.repository }}" \
+            --target 9d8753892109261cdd7b91ebc6ace88f71e2f909 \
+            --title "Vela2 v5.0 — Canonical near-commensurability analysis" \
+            --notes-file release-notes.md
