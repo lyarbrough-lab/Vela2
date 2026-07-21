@@ -14,6 +14,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{hyperref}
+\usepackage{xspace}
 
 \title[]{Stellar-Mass Dependence of Near-Commensurability in Multi-Planet
 System Architectures}
@@ -238,8 +239,8 @@ F dwarf & 47 & 56.0\% & [45.3, 66.5] & 35\%\\
 Table~\ref{tab:ushape} and Figure~\ref{fig:ushape} show the central result:
 the mean system-level bond fraction follows a U-shaped dependence on stellar
 mass. M dwarfs have the highest mean bond fraction (66.0\%), G dwarfs the
-lowest (47.0\%), and F dwarfs (56.0\%) are intermediate between K and M
-dwarfs. The U-shape persists under all detection filters. Under transit-only
+lowest (47.0\%), and F dwarfs (56.0\%) are nearly identical to K dwarfs (54.6\%), both well below
+M dwarfs. The U-shape persists under all detection filters. Under transit-only
 and $\geq 3$ planets: M (70.6\%), K (60.8\%), G (52.6\%), F (66.9\%).
 
 The bootstrap CIs reveal that not all pairwise differences are individually
@@ -257,35 +258,44 @@ U-shape persists under increasingly restrictive detection filters.}
 
 \subsection{Bond Quality: Tightness}
 
-M dwarfs produce the tightest bonds (Table~\ref{tab:tightness};
-Figure~\ref{fig:tightness}). G dwarfs produce the loosest bonds in 5 of 7
-major resonance types. This is the opposite of what one might expect from
+Bond tightness varies by resonance type and stellar mass
+(Table~\ref{tab:tightness}; Figure~\ref{fig:tightness}).
+M dwarfs produce the tightest 3:2 and 9:5 bonds; K dwarfs are tightest in 2:1;
+F dwarfs in 5:3. Aggregated across the four most common resonance types, M dwarfs
+show the smallest mean deviation (1.24\%), followed by K (1.43\%), G (1.52\%),
+and F (1.59\%). G dwarfs produce the loosest bonds in 3 of 4 top types.
+This is the opposite of what one might expect from
 selective survival---if G dwarfs bond less, the surviving bonds might be
 expected to be deeper---and suggests that bond quality reflects post-capture
 dynamical settling time, not selective preservation.
 
 \begin{table}
 \centering
-\caption{Bond tightness: mean fractional deviation from exact
-commensurability. Lower values = tighter bonds = deeper resonant locks.}
+\caption{Bond tightness by the four most common resonance types: mean
+fractional deviation from exact commensurability. The aggregate row
+averages across all bonded pairs in each stellar bin. Lower values =
+tighter bonds.}
 \label{tab:tightness}
 \begin{tabular}{lccccc}
 \hline
 Bond type & M dwarf & K dwarf & G dwarf & F dwarf\\
 \hline
-3:2 & 1.07\% & 1.37\% & 1.49\% & 1.46\%\\
-2:1 & 1.76\% & 1.37\% & 1.98\% & 2.09\%\\
-4:3 & 1.16\% & 1.07\% & 1.81\% & 0.64\%\\
-5:3 & 1.31\% & 1.54\% & 1.75\% & 1.31\%\\
+3:2 & 1.07\% & 1.35\% & 1.49\% & 1.49\%\\
+2:1 & 1.67\% & 1.48\% & 1.97\% & 2.09\%\\
+5:3 & 1.15\% & 1.49\% & 1.51\% & 0.98\%\\
+9:5 & 0.84\% & 1.43\% & 1.19\% & 1.64\%\\
+\hline
+All & 1.24\% & 1.43\% & 1.52\% & 1.59\%\\
 \hline
 \end{tabular}
 \end{table}
 
 \begin{figure}
 \includegraphics[width=\columnwidth]{fig2_tightness.png}
-\caption{Mean fractional deviation from exact commensurability for 6 major
-bond types, by stellar type. Lower values = tighter bonds. M dwarfs produce
-the tightest 3:2 and 5:3 bonds.}
+\caption{Mean fractional deviation from exact commensurability for the four
+most common bond types, by stellar type. Lower values = tighter bonds.
+M dwarfs produce the tightest 3:2 and 9:5 bonds; K dwarfs are tightest in
+2:1; F dwarfs in 5:3.}
 \label{fig:tightness}
 \end{figure}
 
@@ -304,7 +314,7 @@ the U-shaped pattern---highest bond fractions at both ends, lowest in the
 middle---persists in the observed minus null difference. If there were no
 stellar-mass dependence, we would expect $\Delta f$ to scatter randomly around
 zero. Instead, the three independent low+high+middle bins have $\Delta f$ of
-$+2.5\%$, $+4.3\%$, and $-2.1\%$---a pattern consistent with a real U-shape
+$+3.9\%$, $+4.3\%$, and $-2.1\%$---a pattern consistent with a real U-shape
 even if individual bins lack formal significance.
 
 This means:
@@ -330,7 +340,7 @@ $< 8\,R_H$). $\Delta f =$ observed minus null.}
 \hline
 Host bin & $N_{\rm sys}$ & Observed & Null & $\Delta f$\\
 \hline
-low-mass ($<0.6$) & 47 & 66.0\% [56.6, 75.0] & 63.5\% & $+2.5\%$\\
+low-mass ($<0.6$) & 47 & 66.0\% [56.6, 75.0] & 63.5\% & $+3.9\%$\\
 K-like (0.6--0.8) & 62 & 55.6\% [47.5, 63.6] & 57.5\% & $-1.9\%$\\
 solar-mass (0.8--1.2) & 197 & 50.8\% [45.5, 55.9] & 52.9\% & $-2.1\%$\\
 high-mass (1.2--1.6) & 30 & 58.3\% [44.8, 71.6] & 54.0\% & $+4.3\%$\\
@@ -383,8 +393,8 @@ provides post-capture dynamical settling: millions of years for orbits to
 settle deeper into resonance.
 
 Consistent with this picture, M dwarfs show the highest bond fraction, the
-tightest bonds, and the widest bond palette (2:1, 5:3, 7:3, and 8:3 all
-prominent).
+tightest bonds overall, and the broadest variety of prominent resonance types
+(see tightness table).
 
 \subsection{F Dwarf: Fast Chemistry}
 
@@ -466,13 +476,18 @@ from a null hypothesis of uniform bond formation:
 \section{Solar System within the Framework}
 
 The Solar System provides a single, well-characterized data point at the
-G-dwarf location---the bottom of the U-shape. Among adjacent planets from
-Mercury to Neptune, only one pair (Venus-Earth, within 2.4\% of 8:13) falls
-within the $\delta \leq 0.03$ bond criterion. Pluto-Neptune (3:2 at $\sim
-350$~AU) is a clean commensurability but involves a dwarf planet at extreme
-orbital separation. The Solar System is one of the least bonded planetary
-architectures known, consistent with its G dwarf host at the minimum of the
-bonding curve.
+G-dwarf location---the bottom of the U-shape. Among the seven adjacent
+planet pairs from Mercury to Neptune, only two fall within the
+$\delta \leq 0.03$ bond criterion: Venus--Earth (8:5 at 1.6\%) and
+Mercury--Venus (5:2 at 2.2\%). Both bonds are loose ($\delta > 1.5\%$,
+upper half of the bond range), consistent with the G-dwarf floor.
+Pluto--Neptune (3:2 at $\sim 350$~AU) is a clean commensurability but
+involves a dwarf planet at extreme orbital separation. The Solar System
+is one of the least bonded planetary architectures known, consistent with
+its G dwarf host at the minimum of the bonding curve. The Huang et al.
+(2026) scenario---terrestrial planets forming in a resonant chain that gets
+dynamically disrupted---provides a natural framework for the Solar System's
+sparse bonding around a G dwarf~\citep{hu2025}.
 
 \section{Acknowledgements}
 
@@ -490,7 +505,7 @@ Program.
 All data used in this study are publicly available from the NASA Exoplanet
 Archive at \url{https://exoplanetarchive.ipac.caltech.edu}. The
 stability-filtered null simulation code is available from the corresponding
-author upon reasonable request.
+author at a Zenodo repository (DOI to be assigned before final submission).
 
 \bibliographystyle{mnras}
 \bibliography{references}
